@@ -77,18 +77,20 @@ export function SiteLayout({ children }: { children: ReactNode }) {
         <p className="footer-signoff">© {new Date().getFullYear()} Lens Chronicle Photography · Hyderabad, India</p>
       </footer>
 
-      <div className={`menu-panel ${menuOpen ? "menu-open" : ""}`} aria-hidden={!menuOpen}>
-        <Button className="menu-close" variant="ghost" size="icon" type="button" onClick={() => setMenuOpen(false)} aria-label="Close menu"><X /></Button>
-        <Monogram />
-        <nav aria-label="Menu navigation">
-          {navItems.map((item, index) => (
-            <Link key={item.to} to={item.to} onClick={() => setMenuOpen(false)}>
-              <small>{String(index + 1).padStart(2, "0")}</small>{item.label}
-            </Link>
-          ))}
-        </nav>
-        <p>Fashion · Editorial · Commercial</p>
-      </div>
+      {menuOpen ? (
+        <div className="menu-panel menu-open" role="dialog" aria-modal="true" aria-label="Site menu">
+          <Button className="menu-close" variant="ghost" size="icon" type="button" onClick={() => setMenuOpen(false)} aria-label="Close menu"><X /></Button>
+          <Monogram />
+          <nav aria-label="Menu navigation">
+            {navItems.map((item, index) => (
+              <Link key={item.to} to={item.to} onClick={() => setMenuOpen(false)}>
+                <small>{String(index + 1).padStart(2, "0")}</small>{item.label}
+              </Link>
+            ))}
+          </nav>
+          <p>Fashion · Editorial · Commercial</p>
+        </div>
+      ) : null}
     </div>
   );
 }
