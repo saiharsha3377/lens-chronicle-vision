@@ -57,8 +57,16 @@ export function SiteLayout({ children }: { children: ReactNode }) {
 
       <footer className="site-footer">
         <div className="footer-intro">
-          <p>Available for commissions</p>
+          <p>Luxury fashion & editorial photography</p>
           <Link to="/contact">Begin a project <span aria-hidden="true">↗</span></Link>
+        </div>
+        <div className="footer-contact">
+          <a className="footer-whatsapp" href={WHATSAPP_URL} target="_blank" rel="noreferrer">
+            <WhatsAppIcon /> WhatsApp
+          </a>
+          <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer">Instagram <span aria-hidden="true">↗</span></a>
+          <a href={PHONE_TEL}>{PHONE_DISPLAY}</a>
+          <span>Hyderabad · India</span>
         </div>
         <div className="footer-links">
           <Monogram />
@@ -66,7 +74,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
             {navItems.map((item) => <Link key={item.to} to={item.to}>{item.label}</Link>)}
           </nav>
         </div>
-        <p className="footer-signoff">© {new Date().getFullYear()} Lens Chronicle Photography</p>
+        <p className="footer-signoff">© {new Date().getFullYear()} Lens Chronicle Photography · Hyderabad, India</p>
       </footer>
 
       <div className={`menu-panel ${menuOpen ? "menu-open" : ""}`} aria-hidden={!menuOpen}>
