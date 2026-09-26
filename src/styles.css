@@ -18,7 +18,7 @@ body { margin: 0; background: var(--background); color: var(--foreground); font-
 button, a { color: inherit; } button { font: inherit; } img { max-width: 100%; } ::selection { background: var(--foreground); color: var(--background); }
 .site-shell { overflow: clip; min-height: 100svh; background: var(--background); }
 .monogram { display: block; width: 150px; height: auto; filter: invert(1); }
-.site-header { position: absolute; z-index: 40; inset: 0 0 auto; height: 126px; padding: 26px 4vw; display: flex; align-items: center; justify-content: space-between; }
+.site-header { position: absolute; z-index: 40; inset: 0 0 auto; height: 126px; padding: 26px 4vw; display: flex; align-items: center; justify-content: space-between; user-select: none; }
 .brand-link { display: block; }
 .brand-link .monogram { width: 156px; }
 .desktop-nav { display: flex; align-items: center; gap: clamp(22px, 3vw, 52px); margin-left: auto; margin-right: 34px; }
@@ -28,7 +28,7 @@ button, a { color: inherit; } button { font: inherit; } img { max-width: 100%; }
 .desktop-nav a:hover::after, .desktop-nav a.nav-active::after { transform: scaleX(1); }
 .menu-trigger { display: none; width: 42px; height: 42px; border-radius: 50%; }
 
-.opening { position: relative; min-height: 100svh; display: grid; place-items: center; isolation: isolate; }
+.opening { position: relative; min-height: 100svh; display: grid; place-items: center; isolation: isolate; user-select: none; }
 .opening::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, var(--background) 0%, transparent 28%, transparent 72%, var(--background) 100%); opacity: .35; }
 .opening-portrait { position: absolute; inset: 126px 0 0; z-index: -2; display: grid; place-items: center; overflow: hidden; }
 .opening-portrait img { width: min(56vw, 760px); height: 100%; object-fit: cover; object-position: center 38%; filter: brightness(.72) saturate(.82); animation: heroReveal 1s cubic-bezier(.22,.8,.3,1) both; }
