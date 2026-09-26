@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 
-import { PageIntro, SiteLayout } from "@/components/site-layout";
+import { INSTAGRAM_URL, PHONE_TEL, PageIntro, SiteLayout, WHATSAPP_URL } from "@/components/site-layout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -37,7 +37,7 @@ function ContactPage() {
   }
 
   return <SiteLayout><main className="inner-page"><PageIntro index="04" eyebrow="Project inquiry" title={<>Let’s make<br />something lasting.</>} description="Tell us what you are planning. The more context you share, the more considered our first conversation can be." />
-    <section className="contact-layout"><aside><p className="kicker">Before we begin</p><p>For campaigns, editorials and commercial commissions, share your timing and approximate investment. We will reply with availability and the right next step.</p><dl><div><dt>Based in</dt><dd>India · Available worldwide</dd></div><div><dt>Response time</dt><dd>Within 2 business days</dd></div></dl></aside>
+    <section className="contact-layout"><aside><p className="kicker">Before we begin</p><p>For campaigns, editorials and commercial commissions, share your timing and approximate investment. We will reply with availability and the right next step.</p><dl><div><dt>Studio</dt><dd>Hyderabad · India</dd></div><div><dt>Call or WhatsApp</dt><dd><a href={PHONE_TEL}>+91 96523 40008</a></dd></div><div><dt>Instagram</dt><dd><a href={INSTAGRAM_URL} target="_blank" rel="noreferrer">@lenschroniclephotography</a></dd></div><div><dt>Response time</dt><dd>Within 2 business days</dd></div></dl><a className="whatsapp-cta" href={WHATSAPP_URL} target="_blank" rel="noreferrer">Prefer WhatsApp? Message us directly <span aria-hidden="true">↗</span></a></aside>
       <form className="inquiry-form" onSubmit={submitInquiry} noValidate={false}>
         <input className="honeypot" type="text" name="_gotcha" tabIndex={-1} autoComplete="off" aria-hidden="true" />
         <div className="field-row"><label><span>Your name *</span><Input name="name" required maxLength={100} autoComplete="name" placeholder="Name" /></label><label><span>Email address *</span><Input name="email" type="email" required maxLength={255} autoComplete="email" placeholder="you@company.com" /></label></div>
