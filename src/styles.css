@@ -119,6 +119,8 @@ button, a { color: inherit; } button { font: inherit; } img { max-width: 100%; }
 .contact-layout dl div { padding: 18px 0; border-top: 1px solid var(--border); }
 .contact-layout dt { margin-bottom: 7px; text-transform: uppercase; font-size: 8px; letter-spacing: .16em; color: var(--muted-foreground); }
 .contact-layout dd { margin: 0; font: 400 20px var(--font-display); }
+.contact-layout dd a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--border); }
+.whatsapp-cta { display: inline-flex; align-items: baseline; gap: 16px; margin-top: 42px; padding-bottom: 11px; border-bottom: 1px solid var(--foreground); color: var(--foreground); text-decoration: none; text-transform: uppercase; font-size: 9px; letter-spacing: .17em; }
 .inquiry-form { display: flex; flex-direction: column; gap: 34px; }
 .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
 .inquiry-form label { display: flex; flex-direction: column; gap: 11px; }
@@ -138,7 +140,11 @@ button, a { color: inherit; } button { font: inherit; } img { max-width: 100%; }
 .site-footer { padding: 100px 4vw 34px; min-height: 58svh; border-top: 1px solid var(--border); display: flex; flex-direction: column; justify-content: space-between; }
 .footer-intro > p { margin: 0 0 60px; text-transform: uppercase; font-size: 9px; letter-spacing: .25em; }
 .footer-intro > a { display: flex; justify-content: space-between; width: 100%; text-decoration: none; border-bottom: 1px solid var(--border); font: 400 clamp(46px, 8vw, 126px)/1.1 var(--font-display); }
-.footer-links { margin-top: 90px; display: flex; align-items: end; justify-content: space-between; }
+.footer-contact { margin-top: 60px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px 42px; }
+.footer-contact a, .footer-contact > span { display: inline-flex; align-items: center; gap: 10px; color: var(--muted-foreground); text-decoration: none; text-transform: uppercase; font-size: 9px; letter-spacing: .18em; transition: color .3s ease; }
+.footer-contact a:hover { color: var(--foreground); }
+.footer-contact svg { width: 15px; height: 15px; }
+.footer-links { margin-top: 70px; display: flex; align-items: end; justify-content: space-between; }
 .footer-links .monogram { width: 150px; }
 .footer-links nav { display: flex; flex-wrap: wrap; gap: 28px; }
 .footer-links nav a { text-decoration: none; text-transform: uppercase; font-size: 8px; letter-spacing: .16em; color: var(--muted-foreground); }
@@ -197,6 +203,7 @@ button, a { color: inherit; } button { font: inherit; } img { max-width: 100%; }
   .contact-layout { padding: 100px 20px 120px; grid-template-columns: 1fr; gap: 80px; }
   .field-row { grid-template-columns: 1fr; gap: 34px; }
   .site-footer { padding: 75px 20px 25px; min-height: 50svh; }
+  .footer-contact { margin-top: 45px; gap: 14px 24px; }
   .footer-intro > a { font-size: 12vw; }
   .footer-links { align-items: flex-start; gap: 45px; }
   .footer-links nav { max-width: 190px; justify-content: flex-end; gap: 18px; }
