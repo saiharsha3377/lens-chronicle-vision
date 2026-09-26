@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState, type ReactNode } from "react";
 
-import monogram from "@/assets/LC_PNG_BLACK.png.asset.json";
+import monogram from "@/assets/lens-chronicle-logo.png.asset.json";
 import { Button } from "@/components/ui/button";
 
 const navItems = [
