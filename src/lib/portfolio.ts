@@ -6,7 +6,7 @@ import studioOne from "@/assets/web/editorial-studio-1.webp.asset.json";
 import studioTwo from "@/assets/web/editorial-studio-2.webp.asset.json";
 import ceremonyThree from "@/assets/web/fashion-ceremony-3.webp.asset.json";
 import ceremonyFour from "@/assets/web/fashion-ceremony-4.webp.asset.json";
-import mainPortrait from "@/assets/web/main.webp.asset.json";
+import mainPortrait from "@/assets/web/main-hq.webp.asset.json";
 import swimOne from "@/assets/web/swim-1.webp.asset.json";
 import swimTwo from "@/assets/web/swim-2.webp.asset.json";
 import ceremonyOne from "@/assets/web/traditional-1.webp.asset.json";
