@@ -182,6 +182,7 @@ a{color:inherit;text-decoration:none}button{font:inherit}img{max-width:100%;disp
 @media(prefers-reduced-motion:reduce){.focus-plane{animation:none}.scroll-reveal[data-motion="lines"] h1 span,.scroll-reveal[data-motion="lines"] h2 span,.scroll-reveal[data-motion="lines"] h3 span{opacity:1;transform:none}.journal-progress{display:none}}
 
 /* Scroll-linked filmstrip and distinct About contact sheet */
+.sequence-active .journal-rail{touch-action:pan-y pinch-zoom;scroll-behavior:auto}
 .sequence-active .journal-photo{transform:translateY(var(--card-drift,0px));opacity:var(--card-presence,1)}
 .sequence-active .journal-caption{transform:translateY(calc(var(--card-drift,0px) * .35))}
 .contact-sheet-motion{width:min(100%,340px);aspect-ratio:34/30;justify-self:center;color:var(--foreground)}

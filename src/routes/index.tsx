@@ -18,6 +18,8 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: "Fashion, editorial and commercial photography with a refined visual point of view." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:image", content: landscapePhoto.url },
+      { name: "twitter:image", content: landscapePhoto.url },
     ],
     links: [{ rel: "preload", as: "image", href: landscapePhoto.url, fetchPriority: "high" }],
   }),
