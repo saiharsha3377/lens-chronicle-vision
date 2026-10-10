@@ -1,5 +1,9 @@
 # Roadmap
 
+- [ ] Simplify homepage, remove six rejected sections, use a landscape photo composition
+- [ ] Eliminate reused photographs and redesign the shared footer
+- [ ] Verify simplified pages, scrolling, images, and navigation
+
 - [x] Apply requested black/ivory palette, preserve fonts, restore original portrait and refine buttons
 - [x] Add vertical-driven horizontal sections and lightweight reveal transitions
 - [x] Verify scrolling, image framing, page text and navigation
