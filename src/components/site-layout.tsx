@@ -36,7 +36,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const targets = document.querySelectorAll(".chronicle-statement > *, .studio-section > *, .section-heading, .about-text > *, .page-intro > *, .instagram-grid > a, .project-invitation .editorial-container");
+    const targets = document.querySelectorAll(".studio-note > *, .section-heading, .about-text > *, .page-intro > *, .footer-contact");
     const observer = new IntersectionObserver(entries => {
       for (const entry of entries) if (entry.isIntersecting) {
         entry.target.classList.add("reveal-visible");
@@ -80,14 +80,16 @@ export function SiteLayout({ children }: { children: ReactNode }) {
 
       {children}
 
-      <footer className="site-footer">
+      <footer className="site-footer premium-footer">
+        <div className="editorial-container footer-contact"><div><p className="kicker">Contact / Commissions</p><h2>Have a project<br/><em>in mind?</em></h2></div><Button asChild className="footer-inquiry"><Link to="/contact" aria-label="Discuss a project"><span aria-hidden="true">↗</span></Link></Button></div>
         <div className="footer-columns editorial-container">
-          <div className="footer-brand"><Monogram /><h2>Lens <em>Chronicle</em></h2><p>Luxury Fashion & Editorial Photography</p></div>
+          <div className="footer-brand"><Monogram /><p>Luxury Fashion &amp;<br/>Editorial Photography</p></div>
           <div><p className="kicker">Explore</p><nav aria-label="Footer navigation">{navItems.map(item=><Link key={item.to} to={item.to}>{item.label}</Link>)}</nav></div>
-          <div><p className="kicker">Contact</p><a href={PHONE_TEL}>{PHONE_DISPLAY}</a><p>Hyderabad · India</p><Link to="/contact">Contact & Booking →</Link></div>
-          <div><p className="kicker">Follow</p><a href={INSTAGRAM_URL} target="_blank" rel="noreferrer"><Instagram aria-hidden="true"/> Instagram</a><a href={WHATSAPP_URL} target="_blank" rel="noreferrer"><WhatsAppIcon/> WhatsApp</a></div>
+          <div><p className="kicker">Studio</p><a href={PHONE_TEL}>{PHONE_DISPLAY}</a><p>Hyderabad · India</p><Link to="/contact">Contact &amp; Booking ↗</Link></div>
+          <div><p className="kicker">Connect</p><a href={INSTAGRAM_URL} target="_blank" rel="noreferrer"><Instagram aria-hidden="true"/> Instagram ↗</a><a href={WHATSAPP_URL} target="_blank" rel="noreferrer"><WhatsAppIcon/> WhatsApp ↗</a></div>
         </div>
-        <div className="footer-bottom editorial-container"><p>© {new Date().getFullYear()} Lens Chronicle Photography. All images are the property of the studio.</p><span>Hyderabad · India</span></div>
+        <div className="editorial-container footer-signature">Lens <em>Chronicle</em><span>PHOTOGRAPHY</span></div>
+        <div className="footer-bottom editorial-container"><p>© {new Date().getFullYear()} Lens Chronicle Photography</p><span>Fashion · Editorial · Commercial</span></div>
       </footer>
 
       {menuOpen ? (
