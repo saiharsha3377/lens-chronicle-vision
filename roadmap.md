@@ -1,5 +1,9 @@
 # Roadmap
 
+- [x] Link The Edit photograph animation to scroll position
+- [x] Replace About aperture with a distinct contact-sheet motion graphic
+- [x] Verify forward/reverse scrolling and reduced motion
+
 - [x] Redesign About using the approved Services visual direction
 - [x] Replace homepage studio introduction and In Focus presentation with photography-led motion
 - [x] Verify full photo framing, native scrolling and compact layouts
