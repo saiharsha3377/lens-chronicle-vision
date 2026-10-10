@@ -2,7 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 
 import { SiteLayout } from "@/components/site-layout";
 import { Button } from "@/components/ui/button";
-import { disciplines, referenceImages } from "@/lib/reference-design";
+import landscapePhoto from "@/assets/web/landscape-opening.webp.asset.json";
+import { disciplines } from "@/lib/reference-design";
 import { HorizontalSequence } from "@/components/horizontal-sequence";
 
 export const Route = createFileRoute("/")({
@@ -15,7 +16,7 @@ export const Route = createFileRoute("/")({
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "preload", as: "image", href: referenceImages.cta, fetchPriority: "high" }],
+    links: [{ rel: "preload", as: "image", href: landscapePhoto.url, fetchPriority: "high" }],
   }),
   component: HomePage,
 });
@@ -23,7 +24,7 @@ export const Route = createFileRoute("/")({
 function HomePage() {
  return <SiteLayout><main className="minimal-home">
   <section className="opening landscape-opening">
-   <img className="hero-photo" src={referenceImages.cta} alt="Seated fashion portrait by Lens Chronicle Photography" width="1067" height="1600" loading="eager" fetchPriority="high" decoding="async" />
+   <img className="hero-photo" src={landscapePhoto.url} alt="Seated fashion portrait by Lens Chronicle Photography" width="1600" height="1000" loading="eager" fetchPriority="high" decoding="async" />
    <div className="hero-copy editorial-container"><p className="kicker">Fashion · Editorial · Commercial</p><h1>Lens <em>Chronicle</em></h1><p className="hero-subtitle">PHOTOGRAPHY</p><div className="hero-actions"><Button asChild className="editorial-button"><Link to="/work">Explore the work <span aria-hidden="true">↗</span></Link></Button></div></div>
    <span className="hero-location">Hyderabad · India</span>
   </section>
