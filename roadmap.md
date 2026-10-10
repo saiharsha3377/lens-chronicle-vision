@@ -1,5 +1,9 @@
 # Roadmap
 
+- [ ] Recreate the client-approved full site design, imagery, page layouts, navigation, and footer
+- [ ] Preserve working gallery filters and honest inquiry submission states
+- [ ] Check all pages, images, controls, and screen sizes
+
 - [x] Match the client's reference typography and editorial lettering without changing the homepage photo
 - [x] Verify typography, navigation, and image placement across screen sizes
 
