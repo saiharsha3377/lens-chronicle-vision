@@ -1,5 +1,7 @@
 # Roadmap
 
+- [x] Verify and refine The Edit scroll-driven animation with mobile touch gestures, reverse motion, and reduced motion
+
 - [x] Link The Edit photograph animation to scroll position
 - [x] Replace About aperture with a distinct contact-sheet motion graphic
 - [x] Verify forward/reverse scrolling and reduced motion

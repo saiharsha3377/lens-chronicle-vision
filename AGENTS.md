@@ -24,4 +24,4 @@
 - Fit portrait images with contain inside stable frames across galleries and editorial sections, preserving complete compositions rather than using arbitrary cover crops.
 - Services uses an aperture graphic, About uses a contact-sheet graphic, and the homepage studio uses a focus-plane graphic; pause them offscreen and disable motion for reduced-motion preferences to keep each presentation distinct.
 - Homepage selected photographs use a compact portrait-proportioned filmstrip driven by the existing native horizontal sequence, keeping complete compositions visible without oversized empty frames.
-- Drive filmstrip photograph drift and opacity from cached card centers in the existing scroll requestAnimationFrame callback, avoiding extra scroll listeners or per-frame layout measurements.
+- Drive filmstrip photograph drift and opacity from cached card centers and rail width in the existing scroll requestAnimationFrame callback; skip unchanged offsets, match sequence height to the sticky section, and retain native vertical touch gestures to avoid mobile scroll work and address-bar jumps.

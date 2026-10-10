@@ -12,15 +12,19 @@ export function HorizontalSequence({ children }: { children: ReactNode }) {
     let frame = 0;
     let distance = 0;
     let start = 0;
+    let railWidth = 0;
+    let lastOffset = -1;
     let cards: Array<{ element: HTMLElement; center: number }> = [];
     const update = () => {
       frame = 0;
       if (!motion.matches) {
         const offset = Math.min(distance, Math.max(0, window.scrollY - start));
+        if (offset === lastOffset) return;
+        lastOffset = offset;
         rail.scrollLeft = offset;
         element.style.setProperty("--sequence-progress", String(distance ? offset / distance : 0));
         for (const card of cards) {
-          const position = Math.min(1, Math.max(-1, (card.center - offset - rail.clientWidth / 2) / rail.clientWidth));
+          const position = Math.min(1, Math.max(-1, (card.center - offset - railWidth / 2) / railWidth));
           card.element.style.setProperty("--card-drift", `${position * 26}px`);
           card.element.style.setProperty("--card-presence", String(1 - Math.abs(position) * .28));
         }
@@ -28,10 +32,13 @@ export function HorizontalSequence({ children }: { children: ReactNode }) {
     };
     const schedule = () => { if (!frame) frame = requestAnimationFrame(update); };
     const measure = () => {
+      railWidth = rail.clientWidth;
+      lastOffset = -1;
       cards = Array.from(rail.querySelectorAll<HTMLElement>(".journal-frame")).map(card => ({ element: card, center: card.offsetLeft - rail.offsetLeft + card.offsetWidth / 2 }));
-      distance = Math.max(0, rail.scrollWidth - rail.clientWidth);
+      distance = Math.max(0, rail.scrollWidth - railWidth);
       element.classList.toggle("sequence-active", !motion.matches && distance > 0);
-      element.style.height = !motion.matches && distance > 0 ? `${window.innerHeight + distance}px` : "";
+      // Match the sticky section's small viewport height, not the moving mobile address bar.
+      element.style.height = !motion.matches && distance > 0 ? `${section.offsetHeight + distance}px` : "";
       start = element.getBoundingClientRect().top + window.scrollY;
       if (motion.matches) for (const card of cards) {
         card.element.style.removeProperty("--card-drift");
@@ -41,6 +48,7 @@ export function HorizontalSequence({ children }: { children: ReactNode }) {
     };
     const observer = new ResizeObserver(measure);
     observer.observe(rail);
+    observer.observe(section);
     window.addEventListener("resize", measure);
     window.addEventListener("scroll", schedule, { passive: true });
     motion.addEventListener("change", measure);
