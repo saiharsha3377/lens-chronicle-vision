@@ -22,3 +22,5 @@
 - Register dynamically filtered gallery items with the shared reveal observer; use distinct directional variants rather than continuous per-photo scroll handlers.
 - Render service commissions as alternating unframed photo/text rows and keep their aperture graphic transform-only and paused offscreen to preserve scroll performance.
 - Fit portrait images with contain inside stable frames across galleries and editorial sections, preserving complete compositions rather than using arbitrary cover crops.
+- Reuse the aperture graphic for editorial page openings and the focus-plane graphic for the homepage studio introduction; pause both offscreen and disable motion for reduced-motion preferences.
+- Homepage selected photographs use a compact portrait-proportioned filmstrip driven by the existing native horizontal sequence, keeping complete compositions visible without oversized empty frames.
