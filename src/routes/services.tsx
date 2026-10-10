@@ -16,5 +16,5 @@ export const Route = createFileRoute("/services")({
 });
 
 function ServicesPage() {
- return <SiteLayout><main className="inner-page"><PageIntro index="02" eyebrow="Services" title={<>What the studio <em>offers</em></>} description="Every engagement is scoped to the story — day rates, half-days and multi-day campaigns available. Enquire with your vision and the studio will build the shoot around it."/><section className="editorial-container services-page"><ServiceCollection/></section><ProjectInvitation/></main></SiteLayout>;
+ return <SiteLayout><main className="inner-page"><PageIntro index="02" eyebrow="Services" title={<>What the studio <em>offers</em></>} description="Every engagement is scoped to the story - day rates, half-days and multi-day campaigns available. Enquire with your vision and the studio will build the shoot around it."/><section className="editorial-container services-page"><ServiceCollection/></section><ProjectInvitation/></main></SiteLayout>;
 }

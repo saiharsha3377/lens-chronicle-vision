@@ -25,15 +25,15 @@ export const disciplines = [
 ];
 export const instagramImages = [insta1.url,insta2.url,insta3.url,insta4.url,insta5.url,insta6.url];
 export const studioStories = [
- {title:'Behind every frame',body:'Lens Chronicle is built on a simple belief — a photograph should feel like a page torn from a story.'},
+ {title:'Behind every frame',body:'Lens Chronicle is built on a simple belief - a photograph should feel like a page torn from a story.'},
  {title:'Directed with intention',body:'From editorials to first portfolios: light that flatters honestly, styling that speaks, frames composed to be kept.'},
- {title:'Hyderabad to everywhere',body:'Based in Hyderabad. Shooting wherever the story goes — models, brands, and talent ready for their next chapter.'},
+ {title:'Hyderabad to everywhere',body:'Based in Hyderabad. Shooting wherever the story goes - models, brands, and talent ready for their next chapter.'},
 ];
 export const studioServices = [
- {title:'Editorial Shoots',image:serviceEditorial.url,body:'Magazine-grade fashion editorials — concept, lighting and direction built around a story worth printing. For publications, designers and creatives who want imagery with a point of view.'},
- {title:'Model Portfolio Development',image:servicePortfolio.url,body:'Agency-ready portfolios and comp cards for new and working models. A full range of looks in one session — clean beauty, movement, editorial edge — shot to open doors.'},
- {title:'Brand Campaign Photography',image:serviceBrand.url,body:'Campaign imagery that carries a collection — from concept decks and casting through to retouched, channel-ready assets for print, e-commerce and social.'},
+ {title:'Editorial Shoots',image:serviceEditorial.url,body:'Magazine-grade fashion editorials - concept, lighting and direction built around a story worth printing. For publications, designers and creatives who want imagery with a point of view.'},
+ {title:'Model Portfolio Development',image:servicePortfolio.url,body:'Agency-ready portfolios and comp cards for new and working models. A full range of looks in one session - clean beauty, movement, editorial edge - shot to open doors.'},
+ {title:'Brand Campaign Photography',image:serviceBrand.url,body:'Campaign imagery that carries a collection - from concept decks and casting through to retouched, channel-ready assets for print, e-commerce and social.'},
  {title:'Celebrity & Talent Shoots',image:serviceCelebrity.url,body:'Cover stories, press portraits and personal branding for talent. Efficient on-set flow, discreet handling, and portraits that hold their own on any masthead.'},
- {title:'Lookbooks & E-commerce',image:serviceLookbook.url,body:'Consistent, elevated lookbooks that respect the garment — true color, honest texture, and a rhythm buyers can move through quickly.'},
- {title:'Fashion Week & Backstage',image:serviceFashion.url,body:'Runway coverage and the moments around it — fittings, first looks, backstage chaos rendered beautifully. Fast turnaround for press and social.'},
+ {title:'Lookbooks & E-commerce',image:serviceLookbook.url,body:'Consistent, elevated lookbooks that respect the garment - true color, honest texture, and a rhythm buyers can move through quickly.'},
+ {title:'Fashion Week & Backstage',image:serviceFashion.url,body:'Runway coverage and the moments around it - fittings, first looks, backstage chaos rendered beautifully. Fast turnaround for press and social.'},
 ];
