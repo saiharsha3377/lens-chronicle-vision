@@ -1,8 +1,8 @@
 # Roadmap
 
-- [ ] Apply requested black/ivory palette, preserve fonts, restore original portrait and refine buttons
-- [ ] Add vertical-driven horizontal sections and lightweight reveal transitions
-- [ ] Verify scrolling, image framing, page text and navigation
+- [x] Apply requested black/ivory palette, preserve fonts, restore original portrait and refine buttons
+- [x] Add vertical-driven horizontal sections and lightweight reveal transitions
+- [x] Verify scrolling, image framing, page text and navigation
 
 - [x] Recreate the client-approved full site design, imagery, page layouts, navigation, and footer
 - [x] Preserve working gallery filters and honest inquiry submission states
