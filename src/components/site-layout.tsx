@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Menu, X, Instagram } from "lucide-react";
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 
 import monogram from "@/assets/lens-chronicle-logo.png.asset.json";
 import { Button } from "@/components/ui/button";
@@ -33,24 +33,31 @@ export function Monogram({ className = "" }: { className?: string }) {
 
 export function SiteLayout({ children }: { children: ReactNode }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const shell = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const targets = document.querySelectorAll(".studio-note > *, .section-heading, .about-text > *, .page-intro > *, .footer-contact");
+    const element = shell.current;
+    if (!element) return;
+    const selector = ".studio-note > *, .section-heading, .about-text > *, .page-intro > *, .footer-contact, [data-motion]";
+    const registered = new WeakSet<Element>();
     const observer = new IntersectionObserver(entries => {
       for (const entry of entries) if (entry.isIntersecting) {
         entry.target.classList.add("reveal-visible");
         observer.unobserve(entry.target);
       }
     }, { threshold: 0.08 });
-    targets.forEach((target, index) => {
-      if (target instanceof HTMLElement) {
-        target.classList.add("scroll-reveal");
-        target.style.setProperty("--reveal-delay", `${index % 3 * 70}ms`);
-        observer.observe(target);
-      }
+    const register = () => element.querySelectorAll(selector).forEach((target, index) => {
+      if (!(target instanceof HTMLElement) || registered.has(target)) return;
+      registered.add(target);
+      target.classList.add("scroll-reveal");
+      target.style.setProperty("--reveal-delay", `${index % 3 * 60}ms`);
+      observer.observe(target);
     });
-    return () => observer.disconnect();
+    register();
+    const mutations = new MutationObserver(register);
+    mutations.observe(element, { childList: true, subtree: true });
+    return () => { observer.disconnect(); mutations.disconnect(); };
   }, []);
 
   useEffect(() => {
@@ -65,7 +72,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
   }, [menuOpen]);
 
   return (
-    <div className="site-shell">
+    <div className="site-shell" ref={shell}>
       <header className="site-header">
         <Link className="brand-link" to="/" aria-label="Lens Chronicle home"><Monogram /><span>Lens <em>Chronicle</em></span></Link>
         <nav className="desktop-nav" aria-label="Primary navigation">

@@ -14,7 +14,11 @@ export function HorizontalSequence({ children }: { children: ReactNode }) {
     let start = 0;
     const update = () => {
       frame = 0;
-      if (!motion.matches) rail.scrollLeft = Math.min(distance, Math.max(0, window.scrollY - start));
+      if (!motion.matches) {
+        const offset = Math.min(distance, Math.max(0, window.scrollY - start));
+        rail.scrollLeft = offset;
+        element.style.setProperty("--sequence-progress", String(distance ? offset / distance : 0));
+      }
     };
     const schedule = () => { if (!frame) frame = requestAnimationFrame(update); };
     const measure = () => {

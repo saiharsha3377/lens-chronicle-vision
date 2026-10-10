@@ -1,5 +1,9 @@
 # Roadmap
 
+- [ ] Redesign homepage Selected Work and Services with photography-led motion graphics
+- [ ] Preserve full photograph framing and add varied, lightweight portfolio reveals
+- [ ] Verify scrolling, filters, image framing and page health
+
 - [x] Simplify homepage, remove six rejected sections, use a landscape photo composition
 - [x] Eliminate reused photographs and redesign the shared footer
 - [x] Verify simplified pages, scrolling, images, and navigation
