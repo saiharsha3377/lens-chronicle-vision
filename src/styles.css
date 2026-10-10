@@ -180,3 +180,19 @@ a{color:inherit;text-decoration:none}button{font:inherit}img{max-width:100%;disp
 @media(max-width:600px){.studio-introduction{grid-template-columns:1fr;padding-block:60px;gap:30px}.studio-introduction h2{font-size:42px}.focus-motion{width:220px;justify-self:end}.about-intro h1{font-size:64px}.about-editorial,.about-closing{grid-template-columns:1fr;gap:35px;padding-block:55px}.about-portrait img{height:auto;max-height:65svh;aspect-ratio:3/4}.about-narrative h2,.about-closing h2{font-size:46px}.about-principles{padding-block:40px}.principle-row h3{font-size:32px}.about-closing .about-portrait{order:-1}.journal-section h2{font-size:48px}.horizontal-sequence.sequence-active>.journal-section{padding-block:35px}.horizontal-sequence .journal-rail{grid-auto-columns:min(70vw,36svh);gap:22px}.journal-photo{height:50svh}.journal-frame:nth-child(even) .journal-photo{height:44svh}.journal-caption{gap:8px;padding-top:15px;margin-top:16px}.journal-caption h3{font-size:24px}.journal-bottom{margin-top:25px;gap:16px}.journal-bottom>span{font-size:8px}.journal-progress{width:80px}}
 @media(max-height:700px){.horizontal-sequence.sequence-active>.journal-section{padding-block:25px}.journal-section .section-heading{margin-bottom:24px}.journal-section h2{font-size:48px}.journal-photo,.sequence-active .journal-photo img{height:48svh}.journal-frame:nth-child(even) .journal-photo{height:42svh}.journal-frame:nth-child(even) .journal-photo img{height:100%}.journal-bottom{margin-top:20px}}
 @media(prefers-reduced-motion:reduce){.focus-plane{animation:none}.scroll-reveal[data-motion="lines"] h1 span,.scroll-reveal[data-motion="lines"] h2 span,.scroll-reveal[data-motion="lines"] h3 span{opacity:1;transform:none}.journal-progress{display:none}}
+
+/* Scroll-linked filmstrip and distinct About contact sheet */
+.sequence-active .journal-photo{transform:translateY(var(--card-drift,0px));opacity:var(--card-presence,1)}
+.sequence-active .journal-caption{transform:translateY(calc(var(--card-drift,0px) * .35))}
+.contact-sheet-motion{width:min(100%,340px);aspect-ratio:34/30;justify-self:center;color:var(--foreground)}
+.contact-sheet-motion svg{width:100%;height:100%;overflow:visible}
+.contact-sheet-motion rect,.contact-sheet-motion path,.contact-sheet-motion circle{stroke:currentColor;stroke-width:.7}
+.sheet-guide{opacity:.2}.sheet-composition{opacity:.35}
+.sheet-frame{transform-origin:170px 150px;animation:sheet-fan 10s ease-in-out infinite;animation-play-state:paused}
+.sheet-frame-0{--sheet-angle:-15deg;--sheet-offset:-36px;opacity:.35}
+.sheet-frame-1{--sheet-angle:15deg;--sheet-offset:36px;opacity:.55}
+.sheet-frame-2{--sheet-angle:0deg;--sheet-offset:0px}
+.contact-sheet-visible .sheet-frame{animation-play-state:running}
+@keyframes sheet-fan{0%,100%{transform:translateX(var(--sheet-offset)) rotate(var(--sheet-angle))}50%{transform:translateX(calc(var(--sheet-offset) * .4)) rotate(calc(var(--sheet-angle) * .35))}}
+@media(max-width:600px){.contact-sheet-motion{width:185px;justify-self:end}}
+@media(prefers-reduced-motion:reduce){.sheet-frame{animation:none;transform:translateX(var(--sheet-offset)) rotate(var(--sheet-angle))}.sequence-active .journal-photo,.sequence-active .journal-caption{transform:none;opacity:1}}
