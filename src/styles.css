@@ -292,3 +292,16 @@ a{color:inherit;text-decoration:none}button{font:inherit}img{max-width:100%;disp
 }
 @media(max-height:600px){.edit-stage{padding-block:16px}.edit-heading{padding-bottom:12px}.edit-heading h2{font-size:36px}.edit-heading .kicker{margin-bottom:6px}.edit-composition{padding-block:16px;gap:12px}.edit-number{font-size:44px;margin-bottom:12px}.edit-caption h3{font-size:30px;margin-bottom:8px}.edit-foot{padding-top:12px}}
 @media(prefers-reduced-motion:reduce){.edit-image img,.edit-caption{transform:none}.edit-meter{display:none}.edit-foot{grid-template-columns:1fr auto}.edit-panel+.edit-panel{border-top:1px solid var(--border)}}
+
+/* Keep the mobile homepage opening together within the first screen. */
+@media(max-width:900px){
+ .minimal-home .landscape-opening{height:calc(100svh - 80px);min-height:420px;max-height:none;aspect-ratio:auto;margin:0 12px}
+ .minimal-home .landscape-opening .hero-photo{height:calc(100% - 180px);object-fit:contain;object-position:center}
+ .minimal-home .landscape-opening .hero-copy{height:100%;justify-content:flex-end;padding-bottom:28px}
+ .minimal-home .landscape-opening .hero-copy h1{font-size:56px}
+ .minimal-home .landscape-opening .hero-location{display:none}
+}
+@media(max-width:600px){
+ .minimal-home .landscape-opening .hero-copy h1{font-size:44px}
+ .minimal-home .landscape-opening .hero-copy{padding-bottom:24px}
+}
