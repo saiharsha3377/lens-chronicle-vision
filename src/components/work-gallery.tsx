@@ -27,7 +27,7 @@ export function WorkGallery({ limit }: { limit?: number }) {
       )}
       <div className="work-grid" aria-live="polite">
         {visible.map((work, index) => (
-          <Button className={`work-item work-${work.shape}`} variant="ghost" type="button" key={work.title} onClick={() => setActiveWork(work)} aria-label={`View ${work.title} in full screen`}>
+          <Button className={`work-item work-${work.shape}`} data-motion={index % 3 === 0 ? 'from-left' : index % 3 === 1 ? 'image' : 'from-right'} variant="ghost" type="button" key={work.title} onClick={() => setActiveWork(work)} aria-label={`View ${work.title} in full screen`}>
             <span className="work-image"><img src={work.src} alt={work.alt} width="960" height="1280" loading={index < 2 ? "eager" : "lazy"} fetchPriority={index < 2 ? "high" : "low"} decoding="async" /></span>
             <span className="work-meta"><b>{String(index + 1).padStart(2, "0")}</b><span>{work.title}</span><small>{work.category}</small></span>
           </Button>
