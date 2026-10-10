@@ -1,7 +1,7 @@
 # Roadmap
 
-- [ ] Align section boundaries, headings and spacing across mobile and desktop
-- [ ] Verify all pages, mobile menu, photo rail, filters and inquiry fields
+- [x] Align section boundaries, headings and spacing across mobile and desktop
+- [x] Verify all pages, mobile menu, photo rail, filters and inquiry fields
 
 - [x] Verify and refine The Edit scroll-driven animation with mobile touch gestures, reverse motion, and reduced motion
 
