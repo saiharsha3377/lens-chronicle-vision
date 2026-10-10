@@ -19,6 +19,8 @@
  --ink-soft:oklch(0.8 0.014 80);
  --hero-shade:linear-gradient(180deg,oklch(0 0 0 / 10%),transparent 45%,oklch(0 0 0 / 65%));
  --invitation-shade:oklch(0 0 0 / 70%);
+ --section-space:100px;
+ --section-gap:48px;
 }
 *{box-sizing:border-box;border-color:var(--border);letter-spacing:0}
 body{margin:0;background:var(--background);color:var(--foreground);font-family:var(--font-sans);font-size:15px;line-height:1.65}
@@ -198,3 +200,67 @@ a{color:inherit;text-decoration:none}button{font:inherit}img{max-width:100%;disp
 @keyframes sheet-fan{0%,100%{transform:translateX(var(--sheet-offset)) rotate(var(--sheet-angle))}50%{transform:translateX(calc(var(--sheet-offset) * .4)) rotate(calc(var(--sheet-angle) * .35))}}
 @media(max-width:600px){.contact-sheet-motion{width:185px;justify-self:end}}
 @media(prefers-reduced-motion:reduce){.sheet-frame{animation:none;transform:translateX(var(--sheet-offset)) rotate(var(--sheet-angle))}.sequence-active .journal-photo,.sequence-active .journal-caption{transform:none;opacity:1}}
+
+/* Consistent section rhythm and safe mobile text/action tracks. */
+.studio-introduction,.about-editorial,.about-closing{padding-block:var(--section-space)}
+.about-editorial{border-bottom:1px solid var(--border)}
+.about-principles{border-top:0}
+.studio-introduction,.services-intro{grid-template-columns:minmax(0,3fr) minmax(0,2fr)}
+.about-editorial,.about-closing,.commission-row{grid-template-columns:repeat(2,minmax(0,1fr))}
+.studio-introduction>*,.services-intro>*,.about-editorial>*,.about-closing>*,.commission-row>*,.footer-columns>*,.contact-layout>*{min-width:0}
+.section-heading>div,.footer-contact>div{min-width:0}
+.section-heading>.editorial-button,.footer-inquiry,.footer-columns svg{flex-shrink:0}
+.journal-caption{grid-template-columns:20px minmax(0,1fr) 16px;min-height:72px}
+.journal-caption h3{overflow-wrap:anywhere}
+.horizontal-sequence .journal-rail{padding-block:28px 12px;flex-shrink:0}
+.journal-bottom{min-height:16px;flex-shrink:0}
+.journal-progress{flex-shrink:0}
+.premium-footer{margin-top:0}
+.editorial-button,.submit-button{max-width:100%;white-space:normal;height:auto;min-height:48px;padding-block:12px}
+.inquiry-form label,.field-row>*{min-width:0}
+@media(max-width:900px){
+ :root{--section-space:72px;--section-gap:32px}
+ .site-header{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px}
+ .brand-link{min-width:0}.brand-link .monogram{flex-shrink:0}.brand-link>span{min-width:0}
+ .services-intro{grid-template-columns:minmax(0,3fr) minmax(0,1fr)}
+ .section-heading,.footer-contact{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px}
+ .section-heading>.editorial-button{justify-self:end;align-self:end}
+}
+@media(max-width:600px){
+ :root{--section-space:56px;--section-gap:28px}
+ .studio-introduction,.services-intro,.about-editorial,.about-closing,.commission-row{grid-template-columns:minmax(0,1fr);gap:var(--section-gap)}
+ .services-intro{padding-block:var(--section-space)}
+ .section-heading{grid-template-columns:minmax(0,1fr);gap:14px}
+ .section-heading>.editorial-button{justify-self:start;min-height:44px;padding-block:8px}
+ .journal-section h2{font-size:44px}
+ .horizontal-sequence.sequence-active>.journal-section{padding-block:24px}
+ .journal-photo,.sequence-active .journal-photo img{height:min(44svh,calc(100svh - 310px))}
+ .journal-frame:nth-child(even) .journal-photo{height:min(38svh,calc(100svh - 340px))}
+ .journal-frame:nth-child(even) .journal-photo img{height:100%}
+ .journal-section .section-heading .kicker{margin-bottom:12px}
+ .journal-section .section-heading{margin-bottom:8px}
+ .journal-caption{min-height:68px;margin-top:16px;padding-top:12px}
+ .journal-caption h3{font-size:22px}
+ .journal-bottom{display:grid;grid-template-columns:minmax(0,1fr) 60px;margin-top:12px;gap:12px}
+ .journal-progress{width:100%}
+ .studio-introduction h2{font-size:40px}
+ .services-intro h1{font-size:48px}
+ .about-intro h1{font-size:56px}
+ .page-intro h1{font-size:48px;overflow-wrap:anywhere}
+ .inquiry-form input,.inquiry-form select,.inquiry-form textarea{font-size:16px}
+ .contact-layout{gap:var(--section-gap);padding-bottom:var(--section-space)}
+ .contact-layout .inquiry-form{border-top:1px solid var(--border);padding-top:var(--section-gap)}
+ .footer-contact{gap:16px;padding-block:var(--section-space)}
+ .footer-contact h2{font-size:40px}
+ .footer-columns a{min-height:36px}
+ .footer-signature{font-size:46px}
+}
+@media(max-width:380px){
+ .site-header{padding-inline:20px;gap:12px}.brand-link{gap:10px}
+ .footer-contact h2{font-size:36px}.footer-inquiry{width:56px;height:56px}
+ .premium-footer .footer-columns{grid-template-columns:minmax(0,1fr);gap:32px}
+ .footer-brand{padding-bottom:24px;border-bottom:1px solid var(--border)}
+ .footer-signature{font-size:40px}
+ .studio-introduction h2{font-size:36px}
+}
+@media(max-height:500px) and (min-width:601px){.journal-caption{min-height:56px}.journal-photo,.sequence-active .journal-photo img{height:32svh}.journal-frame:nth-child(even) .journal-photo{height:26svh}}
