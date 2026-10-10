@@ -14,6 +14,7 @@ export function SelectedEdit() {
     if (!element || !stage || !track) return;
     const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
     const panels = Array.from(track.querySelectorAll<HTMLElement>(".edit-panel"));
+    const counter = element.querySelector<HTMLElement>(".edit-count");
     let frame = 0;
     let start = 0;
     let travel = 0;
@@ -26,6 +27,7 @@ export function SelectedEdit() {
       if (progress === previous) return;
       previous = progress;
       const position = progress * (panels.length - 1);
+      if (counter) counter.textContent = `${String(Math.round(position) + 1).padStart(2, "0")} / 04`;
       track.style.transform = `translate3d(${-position * width}px,0,0)`;
       element.style.setProperty("--edit-progress", String(progress));
       panels.forEach((panel, index) => {
@@ -74,7 +76,7 @@ export function SelectedEdit() {
           </div>
         </article>)}
       </div></div>
-      <div className="edit-foot editorial-container"><span>Fashion · Editorial · Commercial</span><div className="edit-meter" aria-hidden="true"><span /></div><span>01 / 04</span></div>
+      <div className="edit-foot editorial-container"><span>Fashion · Editorial · Commercial</span><div className="edit-meter" aria-hidden="true"><span /></div><span className="edit-count" aria-hidden="true">01 / 04</span></div>
     </section>
   </div>;
 }
