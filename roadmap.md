@@ -1,7 +1,7 @@
 # Roadmap
 
-- [ ] Match the client's reference typography and editorial lettering without changing the homepage photo
-- [ ] Verify typography, navigation, and image placement across screen sizes
+- [x] Match the client's reference typography and editorial lettering without changing the homepage photo
+- [x] Verify typography, navigation, and image placement across screen sizes
 
 - [x] Build shared navigation, footer, and reusable portfolio data/components
 - [x] Create Work page with All, Fashion, Editorial, Commercial filters
