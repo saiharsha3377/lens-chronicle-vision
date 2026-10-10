@@ -1,5 +1,8 @@
 # Roadmap
 
+- [x] Replace The Edit filmstrip with full-composition scroll-driven editorial plates
+- [x] Verify The Edit forward/reverse scrolling, mobile framing and reduced motion
+
 - [x] Align section boundaries, headings and spacing across mobile and desktop
 - [x] Verify all pages, mobile menu, photo rail, filters and inquiry fields
 
