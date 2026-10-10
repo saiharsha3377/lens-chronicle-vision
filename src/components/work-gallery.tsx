@@ -17,19 +17,19 @@ export function WorkGallery({ limit }: { limit?: number }) {
   return (
     <>
       {!limit && (
-        <div className="filter-bar" aria-label="Filter photography by category">
+        <div className="archive-toolbar"><div className="filter-bar" aria-label="Filter photography by category">
           {filters.map((item) => (
             <Button key={item} variant="ghost" className={filter === item ? "filter-active" : ""} onClick={() => setFilter(item)} aria-pressed={filter === item}>
               {item}<span>{String(item === "All" ? works.length : works.filter((work) => work.category === item).length).padStart(2, "0")}</span>
             </Button>
           ))}
-        </div>
+        </div><span className="archive-total">{String(visible.length).padStart(2, "0")} photographs</span></div>
       )}
-      <div className="work-grid" aria-live="polite">
+      <div className="work-grid editorial-work-grid" aria-live="polite">
         {visible.map((work, index) => (
           <Button className={`work-item work-${work.shape}`} data-motion={index % 3 === 0 ? 'from-left' : index % 3 === 1 ? 'image' : 'from-right'} variant="ghost" type="button" key={work.title} onClick={() => setActiveWork(work)} aria-label={`View ${work.title} in full screen`}>
             <span className="work-image"><img src={work.src} alt={work.alt} width="960" height="1280" loading={index < 2 ? "eager" : "lazy"} fetchPriority={index < 2 ? "high" : "low"} decoding="async" /></span>
-            <span className="work-meta"><b>{String(index + 1).padStart(2, "0")}</b><span>{work.title}</span><small>{work.category}</small></span>
+            <span className="work-meta"><b>{String(index + 1).padStart(2, "0")}</b><span>{work.title}</span><small>{work.category}</small><span className="work-open" aria-hidden="true">↗</span></span>
           </Button>
         ))}
       </div>
