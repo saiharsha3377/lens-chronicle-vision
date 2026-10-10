@@ -16,4 +16,5 @@
 - Gallery cards use lightweight preview images while the larger derivative loads only when a visitor opens an image, keeping scroll work predictable.
 - Visitor inquiries submit directly to one Formspree endpoint configured in the Contact route; no local persistence is used.
 - Reference-site image pointers and editorial content live in `src/lib/reference-design.ts`; shared service collections and project invitations live in `src/components/editorial-sections.tsx` to keep the approved design consistent across pages.
-- Use native scrolling and lightweight image transitions instead of scroll-hijacking or continuous scroll animation, keeping the photography site responsive on lower-powered devices.
+- Horizontal photo sequences use native vertical scrolling with sticky sections and requestAnimationFrame rail updates, never intercepted wheel/touch events; reduced motion keeps native rails to preserve accessibility and predictable performance.
+- Shared layout reveals use a single IntersectionObserver with one-time opacity/transform transitions to avoid continuous animation work.
