@@ -22,7 +22,7 @@ const services = [
 ];
 
 function ServicesPage() {
-  return <SiteLayout><main className="inner-page"><PageIntro index="02" eyebrow="What we create" title={<>Built around<br />your story.</>} description="From the first reference to the final frame, every commission is shaped with purpose." />
+  return <SiteLayout><main className="inner-page"><PageIntro index="02" eyebrow="What we create" title={<>Built around<br /><em>your story.</em></>} description="From the first reference to the final frame, every commission is shaped with purpose." />
     <section className="services-list">{services.map((service) => <article key={service.title}><span>{service.number}</span><h2>{service.title}</h2><p>{service.body}</p><ul>{service.details.map((detail) => <li key={detail}>{detail}</li>)}</ul></article>)}</section>
     <section className="process"><div className="process-image"><img src={imagery.studioTwo} alt="Behind a Lens Chronicle editorial portrait" width="949" height="1935" loading="lazy" decoding="async" /></div><div><p className="kicker">A considered process</p><h2>Listen.<br />Shape.<br />Create.</h2><ol><li><span>01</span><p><b>Discovery</b>Goals, audience, references and practical needs.</p></li><li><span>02</span><p><b>Direction</b>A focused visual approach, treatment and production plan.</p></li><li><span>03</span><p><b>Production</b>A calm, collaborative shoot and a carefully finished delivery.</p></li></ol><Link to="/contact">Discuss your project <span aria-hidden="true">↗</span></Link></div></section>
   </main></SiteLayout>;

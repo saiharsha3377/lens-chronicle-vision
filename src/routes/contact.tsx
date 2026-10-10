@@ -36,7 +36,7 @@ function ContactPage() {
     } catch { setStatus("error"); }
   }
 
-  return <SiteLayout><main className="inner-page"><PageIntro index="04" eyebrow="Project inquiry" title={<>Let’s make<br />something lasting.</>} description="Tell us what you are planning. The more context you share, the more considered our first conversation can be." />
+  return <SiteLayout><main className="inner-page"><PageIntro index="04" eyebrow="Project inquiry" title={<>Let’s make<br /><em>something lasting.</em></>} description="Tell us what you are planning. The more context you share, the more considered our first conversation can be." />
     <section className="contact-layout"><aside><p className="kicker">Before we begin</p><p>For campaigns, editorials and commercial commissions, share your timing and approximate investment. We will reply with availability and the right next step.</p><dl><div><dt>Studio</dt><dd>Hyderabad · India</dd></div><div><dt>Call or WhatsApp</dt><dd><a href={PHONE_TEL}>+91 96523 40008</a></dd></div><div><dt>Instagram</dt><dd><a href={INSTAGRAM_URL} target="_blank" rel="noreferrer">@lenschroniclephotography</a></dd></div><div><dt>Response time</dt><dd>Within 2 business days</dd></div></dl><a className="whatsapp-cta" href={WHATSAPP_URL} target="_blank" rel="noreferrer">Prefer WhatsApp? Message us directly <span aria-hidden="true">↗</span></a></aside>
       <form className="inquiry-form" onSubmit={submitInquiry} noValidate={false}>
         <input className="honeypot" type="text" name="_gotcha" tabIndex={-1} autoComplete="off" aria-hidden="true" />

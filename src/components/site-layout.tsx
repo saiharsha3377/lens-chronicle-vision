@@ -58,7 +58,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
       <footer className="site-footer">
         <div className="footer-intro">
           <p>Luxury fashion & editorial photography</p>
-          <Link to="/contact">Begin a project <span aria-hidden="true">↗</span></Link>
+          <Link to="/contact"><span>Begin a <em>project</em></span><span aria-hidden="true">↗</span></Link>
         </div>
         <div className="footer-contact">
           <a className="footer-whatsapp" href={WHATSAPP_URL} target="_blank" rel="noreferrer">
