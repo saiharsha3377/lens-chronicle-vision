@@ -1,5 +1,8 @@
 # Roadmap
 
+- [x] Remove Portfolio eyebrow and redesign Selected work as asymmetric editorial spreads
+- [x] Verify gallery filters, image viewer and mobile/desktop layouts
+
 - [x] Replace The Edit filmstrip with full-composition scroll-driven editorial plates
 - [x] Verify The Edit forward/reverse scrolling, mobile framing and reduced motion
 

@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import { PageIntro, SiteLayout } from "@/components/site-layout";
+import { SiteLayout } from "@/components/site-layout";
 import { WorkGallery } from "@/components/work-gallery";
 
 export const Route = createFileRoute("/work")({
@@ -16,5 +16,5 @@ export const Route = createFileRoute("/work")({
 });
 
 function WorkPage() {
- return <SiteLayout><main className="inner-page"><PageIntro index="01" eyebrow="Portfolio" title={<>Selected <em>work</em></>} description="A working archive of fashion, editorials, portfolios, campaigns and talent shoots."/><section className="portfolio archive editorial-container"><WorkGallery/></section></main></SiteLayout>;
+ return <SiteLayout><main className="inner-page work-edition"><header className="work-opening editorial-container"><h1 data-motion="lines"><span>Selected</span><span><em>work.</em></span></h1><div data-motion="from-right"><span className="kicker">Lens Chronicle / Archive</span><p>Fashion, people and the moments between.<br/>A selection from the studio.</p></div></header><section className="portfolio archive editorial-container" aria-label="Selected photographs"><WorkGallery/></section></main></SiteLayout>;
 }
