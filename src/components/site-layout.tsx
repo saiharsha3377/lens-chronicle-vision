@@ -14,7 +14,7 @@ const navItems = [
 ];
 
 export const WHATSAPP_URL =
-  "https://api.whatsapp.com/send/?phone=919652340008&text=Hi+LENSCHRONICLE+%E2%80%94+I%E2%80%99d+like+to+discuss+a+project.&type=phone_number&app_absent=0";
+  "https://api.whatsapp.com/send/?phone=919652340008&text=Hi+LENSCHRONICLE+-+I%E2%80%99d+like+to+discuss+a+project.&type=phone_number&app_absent=0";
 export const INSTAGRAM_URL = "https://www.instagram.com/lenschroniclephotography";
 export const PHONE_TEL = "tel:+919652340008";
 export const PHONE_DISPLAY = "+91 96523 40008";
@@ -33,6 +33,25 @@ export function Monogram({ className = "" }: { className?: string }) {
 
 export function SiteLayout({ children }: { children: ReactNode }) {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const targets = document.querySelectorAll(".chronicle-statement > *, .studio-section > *, .section-heading, .about-text > *, .page-intro > *, .instagram-grid > a, .project-invitation .editorial-container");
+    const observer = new IntersectionObserver(entries => {
+      for (const entry of entries) if (entry.isIntersecting) {
+        entry.target.classList.add("reveal-visible");
+        observer.unobserve(entry.target);
+      }
+    }, { threshold: 0.08 });
+    targets.forEach((target, index) => {
+      if (target instanceof HTMLElement) {
+        target.classList.add("scroll-reveal");
+        target.style.setProperty("--reveal-delay", `${index % 3 * 70}ms`);
+        observer.observe(target);
+      }
+    });
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     const onEscape = (event: KeyboardEvent) => { if (event.key === "Escape") setMenuOpen(false); };
