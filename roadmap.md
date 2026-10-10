@@ -1,8 +1,8 @@
 # Roadmap
 
-- [ ] Redesign About using the approved Services visual direction
-- [ ] Replace homepage studio introduction and In Focus presentation with photography-led motion
-- [ ] Verify full photo framing, native scrolling and compact layouts
+- [x] Redesign About using the approved Services visual direction
+- [x] Replace homepage studio introduction and In Focus presentation with photography-led motion
+- [x] Verify full photo framing, native scrolling and compact layouts
 
 - [x] Redesign homepage Selected Work and Services with photography-led motion graphics
 - [x] Preserve full photograph framing and add varied, lightweight portfolio reveals
