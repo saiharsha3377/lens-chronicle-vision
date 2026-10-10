@@ -15,3 +15,5 @@
 - Portfolio metadata and optimized image references live in `src/lib/portfolio.ts` to keep category filtering and page imagery consistent.
 - Gallery cards use lightweight preview images while the larger derivative loads only when a visitor opens an image, keeping scroll work predictable.
 - Visitor inquiries submit directly to one Formspree endpoint configured in the Contact route; no local persistence is used.
+- Reference-site image pointers and editorial content live in `src/lib/reference-design.ts`; shared service collections and project invitations live in `src/components/editorial-sections.tsx` to keep the approved design consistent across pages.
+- Use native scrolling and lightweight image transitions instead of scroll-hijacking or continuous scroll animation, keeping the photography site responsive on lower-powered devices.
