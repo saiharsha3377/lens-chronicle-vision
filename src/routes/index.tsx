@@ -1,8 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 
 import { SiteLayout } from "@/components/site-layout";
-import { WorkGallery } from "@/components/work-gallery";
-import { imagery } from "@/lib/portfolio";
+import { Button } from "@/components/ui/button";
+import { ProjectInvitation, ServiceCollection } from "@/components/editorial-sections";
+import { disciplines, instagramImages, referenceImages, studioStories } from "@/lib/reference-design";
+import { INSTAGRAM_URL } from "@/components/site-layout";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -14,34 +16,23 @@ export const Route = createFileRoute("/")({
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "preload", as: "image", href: imagery.main, fetchPriority: "high" }],
+    links: [{ rel: "preload", as: "image", href: referenceImages.hero, fetchPriority: "high" }],
   }),
   component: HomePage,
 });
 
 function HomePage() {
-  return (
-    <SiteLayout>
-      <main>
-        <section className="opening">
-          <div className="opening-portrait"><img src={imagery.main} alt="Fashion portrait in a red sculptural gown" width="1600" height="2400" loading="eager" fetchPriority="high" decoding="async" /></div>
-          <p className="opening-index">Selected works · 2023–26</p>
-          <div className="title-lockup"><p>Fashion · Editorial · Commercial</p><h1>Lens <em>Chronicle</em></h1><span>Photography</span></div>
-          <Link className="scroll-cue" to="/work">Explore work <b aria-hidden="true">↗</b></Link>
-        </section>
-
-        <section className="portfolio home-portfolio">
-          <div className="section-heading"><span>01</span><h2>Selected<br /><em>Chronicles</em></h2><p>A study of form, fabric and presence.</p></div>
-          <WorkGallery limit={4} />
-          <div className="section-link"><Link to="/work">View the complete portfolio <span aria-hidden="true">→</span></Link></div>
-        </section>
-
-        <section className="home-statement">
-          <p>02 · Our point of view</p>
-          <h2>Light remembers<br /><em>what time forgets.</em></h2>
-          <div><p>Considered imagery where fashion, character and atmosphere meet. Every frame is shaped with clarity, restraint and an instinct for the unexpected.</p><Link to="/about">Discover the studio <span aria-hidden="true">↗</span></Link></div>
-        </section>
-      </main>
-    </SiteLayout>
-  );
+ return <SiteLayout><main>
+  <section className="opening">
+   <img className="hero-photo" src={referenceImages.hero} alt="Fashion editorial portrait by Lens Chronicle Photography, Hyderabad" width="1600" height="2400" loading="eager" fetchPriority="high" decoding="async" />
+   <div className="hero-copy editorial-container"><p className="kicker">Fashion & editorial · Hyderabad</p><h1>Lens <em>Chronicle</em></h1><p className="hero-description">Imagery that feels like a page torn from a story — for models, brands, and the frames worth keeping.</p><div className="hero-actions"><Button asChild className="editorial-button"><Link to="/contact">Book a Shoot <span aria-hidden="true">→</span></Link></Button><Button asChild variant="outline" className="editorial-button button-outline"><Link to="/work">View Portfolio</Link></Button></div></div>
+  </section>
+  <section className="chronicle-statement"><p className="kicker">The chronicle continues</p><h2>Every frame, <em>a story</em></h2><p>The studio, the work, and the frames waiting for you.</p></section>
+  <section className="studio-section editorial-container"><div className="studio-photo"><img src={referenceImages.studio} alt="Fashion portrait in a coral sari by Lens Chronicle" width="1200" height="1500" loading="lazy" decoding="async"/></div><div><p className="kicker">The Studio</p><h2><em>B</em>ehind every frame, a chronicle</h2><div className="studio-stories">{studioStories.map((story,index)=><article key={story.title}><p className="kicker">{String(index+1).padStart(2,'0')}</p><h3>{story.title}</h3><p>{story.body}</p></article>)}</div><Link className="text-link" to="/about">Read the full story →</Link></div></section>
+  <section className="discipline-section"><div className="editorial-container section-heading"><div><p className="kicker">Selected Work</p><h2><em>F</em>our disciplines, one signature</h2></div><Link className="text-link" to="/work">View all →</Link></div><div className="discipline-rail editorial-container">{disciplines.map((item,index)=><Link className="discipline-item" to="/work" key={item.title}><img src={item.image} alt={item.title+' photography'} width="1066" height="1600" loading="lazy" decoding="async"/><div><p className="kicker">{String(index+1).padStart(2,'0')}</p><h3>{item.title}</h3><span className="text-link">View collection →</span></div></Link>)}</div></section>
+  <section className="lookbook-section"><div className="editorial-container section-heading"><div><p className="kicker">Lookbook</p><h2>Frames in <em>motion</em></h2></div><Link className="text-link" to="/work">Explore the archive →</Link></div><div className="lookbook-rail editorial-container">{disciplines.map((item,index)=><figure key={item.title}><img src={item.image} alt={item.title+' lookbook frame'} width="1066" height="1600" loading="lazy" decoding="async"/><figcaption><span>Frame {String(index+1).padStart(2,'0')}</span><em>{item.title}</em></figcaption></figure>)}</div></section>
+  <section className="home-services"><div className="editorial-container"><p className="kicker">Services</p><h2>Let’s get you <em>elevated</em></h2><ServiceCollection preview/><Link className="text-link" to="/services">All services →</Link></div></section>
+  <section className="instagram-section editorial-container"><div className="section-heading"><div><p className="kicker">Instagram</p><h2><em>F</em>resh from the feed</h2></div><a className="text-link" href={INSTAGRAM_URL} target="_blank" rel="noreferrer">@lenschroniclephotography ↗</a></div><div className="instagram-grid">{instagramImages.map((image,index)=><a href={INSTAGRAM_URL} target="_blank" rel="noreferrer" key={image} aria-label={'View Lens Chronicle on Instagram, photograph '+(index+1)}><img src={image} alt={'Lens Chronicle fashion photograph '+(index+1)} width="1067" height="1600" loading="lazy" decoding="async"/></a>)}</div></section>
+  <ProjectInvitation/>
+ </main></SiteLayout>;
 }

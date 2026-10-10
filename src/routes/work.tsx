@@ -16,5 +16,5 @@ export const Route = createFileRoute("/work")({
 });
 
 function WorkPage() {
-  return <SiteLayout><main className="inner-page"><PageIntro index="01" eyebrow="Selected work · 2023–26" title={<>Stories in<br /><em>still form.</em></>} description="Choose a discipline or move through the complete body of work." /><section className="portfolio archive"><WorkGallery /></section></main></SiteLayout>;
+ return <SiteLayout><main className="inner-page"><PageIntro index="01" eyebrow="Portfolio" title={<>Selected <em>work</em></>} description="A working archive of fashion, editorials, portfolios, campaigns and talent shoots."/><section className="portfolio archive editorial-container"><WorkGallery/></section></main></SiteLayout>;
 }
