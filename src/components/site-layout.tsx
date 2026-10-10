@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Instagram } from "lucide-react";
 import { useEffect, useState, type ReactNode } from "react";
 
 import monogram from "@/assets/lens-chronicle-logo.png.asset.json";
@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 
 const navItems = [
   { label: "Home", to: "/" as const },
-  { label: "Work", to: "/work" as const },
+  { label: "Portfolio", to: "/work" as const },
   { label: "Services", to: "/services" as const },
   { label: "About", to: "/about" as const },
   { label: "Contact", to: "/contact" as const },
@@ -35,6 +35,12 @@ export function SiteLayout({ children }: { children: ReactNode }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
+    const onEscape = (event: KeyboardEvent) => { if (event.key === "Escape") setMenuOpen(false); };
+    document.addEventListener("keydown", onEscape);
+    return () => document.removeEventListener("keydown", onEscape);
+  }, []);
+
+  useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
   }, [menuOpen]);
@@ -42,13 +48,13 @@ export function SiteLayout({ children }: { children: ReactNode }) {
   return (
     <div className="site-shell">
       <header className="site-header">
-        <Link className="brand-link" to="/" aria-label="Lens Chronicle home"><Monogram /></Link>
+        <Link className="brand-link" to="/" aria-label="Lens Chronicle home"><Monogram /><span>Lens <em>Chronicle</em></span></Link>
         <nav className="desktop-nav" aria-label="Primary navigation">
-          {navItems.slice(1).map((item) => (
+          {navItems.map((item) => (
             <Link key={item.to} to={item.to} activeProps={{ className: "nav-active" }}>{item.label}</Link>
           ))}
-        </nav>
-        <Button className="menu-trigger" variant="ghost" size="icon" type="button" onClick={() => setMenuOpen(true)} aria-label="Open menu">
+        <Button asChild variant="outline" className="header-book"><Link to="/contact">Book a Shoot</Link></Button></nav>
+        <Button className="menu-trigger" variant="ghost" size="icon" type="button" onClick={() => setMenuOpen(true)} aria-label="Open menu" aria-expanded={menuOpen}>
           <Menu aria-hidden="true" />
         </Button>
       </header>
@@ -56,25 +62,13 @@ export function SiteLayout({ children }: { children: ReactNode }) {
       {children}
 
       <footer className="site-footer">
-        <div className="footer-intro">
-          <p>Luxury fashion & editorial photography</p>
-          <Link to="/contact"><span>Begin a <em>project</em></span><span aria-hidden="true">↗</span></Link>
+        <div className="footer-columns editorial-container">
+          <div className="footer-brand"><Monogram /><h2>Lens <em>Chronicle</em></h2><p>Luxury Fashion & Editorial Photography</p></div>
+          <div><p className="kicker">Explore</p><nav aria-label="Footer navigation">{navItems.map(item=><Link key={item.to} to={item.to}>{item.label}</Link>)}</nav></div>
+          <div><p className="kicker">Contact</p><a href={PHONE_TEL}>{PHONE_DISPLAY}</a><p>Hyderabad · India</p><Link to="/contact">Contact & Booking →</Link></div>
+          <div><p className="kicker">Follow</p><a href={INSTAGRAM_URL} target="_blank" rel="noreferrer"><Instagram aria-hidden="true"/> Instagram</a><a href={WHATSAPP_URL} target="_blank" rel="noreferrer"><WhatsAppIcon/> WhatsApp</a></div>
         </div>
-        <div className="footer-contact">
-          <a className="footer-whatsapp" href={WHATSAPP_URL} target="_blank" rel="noreferrer">
-            <WhatsAppIcon /> WhatsApp
-          </a>
-          <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer">Instagram <span aria-hidden="true">↗</span></a>
-          <a href={PHONE_TEL}>{PHONE_DISPLAY}</a>
-          <span>Hyderabad · India</span>
-        </div>
-        <div className="footer-links">
-          <Monogram />
-          <nav aria-label="Footer navigation">
-            {navItems.map((item) => <Link key={item.to} to={item.to}>{item.label}</Link>)}
-          </nav>
-        </div>
-        <p className="footer-signoff">© {new Date().getFullYear()} Lens Chronicle Photography · Hyderabad, India</p>
+        <div className="footer-bottom editorial-container"><p>© {new Date().getFullYear()} Lens Chronicle Photography. All images are the property of the studio.</p><span>Hyderabad · India</span></div>
       </footer>
 
       {menuOpen ? (

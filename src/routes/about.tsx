@@ -1,7 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 
-import { PageIntro, SiteLayout } from "@/components/site-layout";
-import { imagery } from "@/lib/portfolio";
+import { SiteLayout } from "@/components/site-layout";
+import { referenceImages } from "@/lib/reference-design";
+import { ProjectInvitation } from "@/components/editorial-sections";
 
 export const Route = createFileRoute("/about")({
   head: () => ({ meta: [
@@ -16,8 +17,5 @@ export const Route = createFileRoute("/about")({
 });
 
 function AboutPage() {
-  return <SiteLayout><main className="inner-page"><PageIntro index="03" eyebrow="Behind the lens" title={<>A chronicle<br /><em>of presence.</em></>} description="Photography rooted in observation, emotion and the space between a planned frame and an honest moment." />
-    <section className="about-story"><div className="about-image tall"><img src={imagery.ceremonyFour} alt="Fashion portrait from the Lens Chronicle archive" width="1600" height="2400" loading="eager" decoding="async" /></div><div className="about-text"><p className="kicker">Lens Chronicle</p><h2>Images that feel<br />lived, not arranged.</h2><p>Lens Chronicle is a photography practice shaped by fashion, portraiture and visual culture. We approach every commission as a collaboration—listening first, then building an atmosphere where movement, character and detail can become the story.</p><p>Our work balances a clean editorial eye with the warmth of something remembered. The result is imagery designed to hold attention now and retain meaning later.</p><Link to="/contact">Work with us <span aria-hidden="true">↗</span></Link></div></section>
-    <section className="about-values"><p>What guides the work</p><div><article><span>01</span><h3>Clarity</h3><p>Every decision earns its place in the frame.</p></article><article><span>02</span><h3>Character</h3><p>People and products remain recognisably themselves.</p></article><article><span>03</span><h3>Atmosphere</h3><p>Light, colour and gesture create a world worth entering.</p></article></div></section>
-  </main></SiteLayout>;
+ return <SiteLayout><main className="inner-page"><section className="about-story editorial-container"><div className="about-text"><p className="kicker">About</p><h1>The eye behind <em>the chronicle</em></h1><p>Photography, for this studio, has never been about the camera. It’s about the moment a person forgets they’re being photographed — and the frame that keeps it forever.</p><p>The work spans editorials, model portfolios, brand campaigns and celebrity portraits, with a simple approach: direct with kindness, light with honesty, and compose every frame as if it’s going to print.</p><blockquote>“A photograph should feel like a page torn from a story — yours.”</blockquote><Link className="text-link" to="/contact">Work with the studio →</Link></div><img src={referenceImages.studio} alt="Lens Chronicle fashion portrait in a coral sari" width="1200" height="1500" loading="eager" decoding="async"/></section><section className="about-approach"><div className="editorial-container about-story"><img src={referenceImages.bts} alt="Behind the scenes at Lens Chronicle" width="1067" height="1600" loading="lazy" decoding="async"/><div className="about-text"><p className="kicker">Approach</p><h2>Directed, never <em>staged</em></h2><p>Every shoot starts long before the first frame — moodboards, casting conversations, light tests, a playlist that sets the room’s pulse. On set, the direction is quiet and specific. The best images happen in the space between instructions.</p><p>Post-production is treated like retouching for print: skin stays skin, fabric stays true, and nothing leaves the studio that wouldn’t survive a double-page spread.</p></div></div></section><ProjectInvitation/></main></SiteLayout>;
 }
