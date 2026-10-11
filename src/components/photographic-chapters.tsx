@@ -56,14 +56,12 @@ export function PhotographicChapters() {
     {chapters.map((chapter, index) => <section className={`photo-chapter photo-chapter-${index + 1}`} key={chapter.to} aria-labelledby={`chapter-title-${index}`}>
       <div className="chapter-screen">
         <Button asChild variant="ghost" className="chapter-link">
-          <Link to={chapter.to} aria-label={`Explore ${chapter.title}`}>
+          <Link to={chapter.to} resetScroll aria-label={`Explore ${chapter.title}`}>
             <picture className="chapter-picture"><source media="(max-width: 600px) and (min-height: 501px)" srcSet={chapter.portrait} /><img className="chapter-photo" src={chapter.image} alt={chapter.alt} width="1920" height="1080" loading="lazy" decoding="async" /></picture>
-            <div className="chapter-top editorial-container"><span>Lens Chronicle / {String(index + 3).padStart(2, "0")}</span><span>Hyderabad · India</span></div>
             <div className="chapter-caption editorial-container">
-              <div className="chapter-name"><p className="kicker">{chapter.label}</p><h2 id={`chapter-title-${index}`}>{chapter.title}</h2></div>
+              <div className="chapter-name"><h2 id={`chapter-title-${index}`}>{chapter.title}</h2></div>
               <span className="chapter-arrow" aria-hidden="true"><svg className="chapter-orbit" viewBox="0 0 100 100" fill="none"><path d="M50 7A43 43 0 0 1 93 50M50 93A43 43 0 0 1 7 50" /><path className="chapter-orbit-inner" d="M50 17A33 33 0 0 0 17 50M50 83A33 33 0 0 0 83 50" /></svg><ArrowUpRight className="chapter-direction" /></span>
             </div>
-            <div className="chapter-bottom editorial-container"><span>{String(index + 1).padStart(2, "0")} / 04</span><span>{chapter.to === "/work" ? "Explore the photographs" : chapter.to === "/services" ? "Discover our commissions" : chapter.to === "/about" ? "Meet the studio" : "Get in touch"} ↗</span></div>
           </Link>
         </Button>
       </div>
