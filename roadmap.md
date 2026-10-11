@@ -1,7 +1,7 @@
 # Roadmap
 
-- [ ] Simplify repeated photo labels and add modest chapter gaps
-- [ ] Add distinct non-swimwear photographs and verify separate page links
+- [x] Simplify repeated photo labels and add modest chapter gaps
+- [x] Add distinct non-swimwear photographs and verify separate page links
 
 - [x] Remove swimwear photographs from every public presentation
 - [x] Refine distinct full-screen chapters with animated navigation symbols and Drive photographs
