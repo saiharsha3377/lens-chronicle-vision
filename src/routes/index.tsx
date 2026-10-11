@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import landscapePhoto from "@/assets/home-landscape-wide.jpg";
 import { SelectedEdit } from "@/components/selected-edit";
 import { FocusMotion } from "@/components/focus-motion";
+import { PhotographicChapters } from "@/components/photographic-chapters";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -30,5 +31,6 @@ function HomePage() {
   </section>
   <section className="studio-introduction editorial-container"><div className="studio-introduction-copy" data-motion="lines"><p className="kicker">Lens Chronicle / The studio</p><h2><span>Considered light.</span><span><em>Unmistakably you.</em></span></h2><p>Luxury fashion and editorial photography, made with intention. A Hyderabad studio for people, publications and brands with a distinct point of view.</p><Button asChild variant="ghost" className="editorial-button"><Link to="/about">Meet the studio <span aria-hidden="true">↗</span></Link></Button></div><FocusMotion/></section>
    <SelectedEdit />
+    <PhotographicChapters />
  </main></SiteLayout>;
 }
