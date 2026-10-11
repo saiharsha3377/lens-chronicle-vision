@@ -17,7 +17,7 @@
 - Gallery cards use lightweight preview images while the larger derivative loads only when a visitor opens an image, keeping scroll work predictable.
 - The work archive uses asymmetric CSS grid photographic spreads with natural image proportions and a separate category/count toolbar; mobile narrows the offsets rather than cropping photographs.
 - Contact is a direct-details route; booking and the Formspree inquiry form live at /book so navigation keeps the two visitor intents separate, with no local persistence.
-- Mount the initial focus loader once in the root and release it after eager images/fonts settle with a bounded timeout, preventing repeat navigation delays and indefinite blocking.
+- Mount the initial focus loader once in the root, use time-based monotonic presentation progress gated by eager-image/font readiness, hold 100 before fading, and cap waiting to prevent indefinite blocking.
 - Reference-site image pointers and editorial content live in `src/lib/reference-design.ts`; shared service collections live in `src/components/editorial-sections.tsx`, while project booking belongs in the shared footer to avoid repeated invitation sections.
 - Assign each photograph to one content placement across public pages, treating different derivatives of the same original as one photograph, to prevent visual repetition.
 - Horizontal photo sequences use native vertical scrolling with sticky sections and requestAnimationFrame rail updates, never intercepted wheel/touch events; reduced motion keeps native rails to preserve accessibility and predictable performance.

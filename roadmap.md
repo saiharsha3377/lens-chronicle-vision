@@ -1,5 +1,8 @@
 # Roadmap
 
+- [x] Refine true landscape photo, longer focus loader with visible 100, and borderless booking fields
+- [x] Verify photo composition, loader progression and fields across screen sizes
+
 - [x] Replace homepage photo with supplied landscape composition
 - [x] Separate Contact details and unboxed booking form, wire call/WhatsApp/email links
 - [x] Add centered-logo focus loader and verify desktop/mobile flows
