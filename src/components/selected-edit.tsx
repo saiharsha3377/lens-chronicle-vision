@@ -72,11 +72,11 @@ export function SelectedEdit() {
         {photographs.map((item, index) => <article className="edit-panel" key={item.title}>
           <div className="edit-composition editorial-container">
             <Link to="/work" className="edit-image" aria-label={`Explore ${item.title} photography`}><img src={item.image} alt={`${item.title} photography by Lens Chronicle`} width="1066" height="1600" loading="lazy" decoding="async" /></Link>
-            <div className="edit-caption"><span className="edit-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span><div><p className="kicker">Lens Chronicle / Selected work</p><h3>{item.title}</h3><Link to="/work" className="text-link">View collection <span aria-hidden="true">↗</span></Link></div></div>
+            <div className="edit-caption"><span className="edit-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span><div><h3>{item.title}</h3><Link to="/work" resetScroll className="text-link">View collection <span aria-hidden="true">↗</span></Link></div></div>
           </div>
         </article>)}
       </div></div>
-      <div className="edit-foot editorial-container"><span>Fashion · Editorial · Commercial</span><div className="edit-meter" aria-hidden="true"><span /></div><span className="edit-count" aria-hidden="true">01 / 04</span></div>
+      <div className="edit-foot editorial-container"><div className="edit-meter" aria-hidden="true"><span /></div><span className="edit-count" aria-hidden="true">01 / 04</span></div>
     </section>
   </div>;
 }

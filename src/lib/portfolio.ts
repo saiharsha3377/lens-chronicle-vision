@@ -17,6 +17,10 @@ import studioTwoThumb from "@/assets/thumbs/editorial-studio-2.webp.asset.json";
 import ceremonyFourThumb from "@/assets/thumbs/fashion-ceremony-4.webp.asset.json";
 import ceremonyOneThumb from "@/assets/thumbs/traditional-1.webp.asset.json";
 import ceremonyTwoThumb from "@/assets/thumbs/traditional-2.webp.asset.json";
+import ceremonyThree from "@/assets/web/fashion-ceremony-3.webp.asset.json";
+import ceremonyThreeThumb from "@/assets/thumbs/fashion-ceremony-3.webp.asset.json";
+import cityPortrait from "@/assets/reference/instagram-6.webp.asset.json";
+import garmentPortrait from "@/assets/reference/service-brand.webp.asset.json";
 
 export type WorkCategory = "Fashion" | "Editorial" | "Commercial";
 
@@ -47,4 +51,7 @@ export const works: Work[] = [
   { src: commercialTwoThumb.url, fullSrc: commercialTwo.url, title: "Poise", category: "Commercial", alt: "Polished commercial portrait for a beauty campaign", shape: "portrait" },
   { src: ceremonyFourThumb.url, fullSrc: ceremonyFour.url, title: "Anu", category: "Fashion", alt: "Fashion portrait from the Anu series", shape: "portrait" },
   { src: studioTwoThumb.url, fullSrc: studioTwo.url, title: "Between Lines", category: "Editorial", alt: "Experimental editorial portrait in the studio", shape: "portrait" },
+  { src: ceremonyThreeThumb.url, fullSrc: ceremonyThree.url, title: "Petal Study", category: "Fashion", alt: "Full-length fashion portrait in a pale blue floral lehenga against a grey studio backdrop", shape: "classic" },
+  { src: cityPortrait.url, fullSrc: cityPortrait.url, title: "City Poise", category: "Editorial", alt: "Outdoor portrait in a black dress with sunglasses and a handbag", shape: "portrait" },
+  { src: garmentPortrait.url, fullSrc: garmentPortrait.url, title: "Ivory Detail", category: "Commercial", alt: "Portrait showcasing a white embroidered blouse, skirt and statement earrings", shape: "classic" },
 ];
