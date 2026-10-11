@@ -5,17 +5,17 @@ import { Button } from "@/components/ui/button";
 import archive from "@/assets/chapters/archive.webp.asset.json";
 import commissions from "@/assets/chapters/commissions.webp.asset.json";
 import studio from "@/assets/chapters/studio.webp.asset.json";
-import contact from "@/assets/chapters/contact.webp.asset.json";
+import contact from "@/assets/chapters/conversation-landscape.webp.asset.json";
 import archivePortrait from "@/assets/reference/instagram-3.webp.asset.json";
 import commissionsPortrait from "@/assets/reference/instagram-2.webp.asset.json";
 import studioPortrait from "@/assets/reference/hero-0286.webp.asset.json";
-import contactPortrait from "@/assets/reference/cta.webp.asset.json";
+import contactPortrait from "@/assets/chapters/conversation-portrait.webp.asset.json";
 
 const chapters = [
   { title: "The archive", label: "Fashion · Editorial · Commercial", to: "/work" as const, image: archive.url, portrait: archivePortrait.url, alt: "Full-length fashion portrait in a black dress against a warm studio backdrop" },
   { title: "Commissions", label: "Services / Made with intention", to: "/services" as const, image: commissions.url, portrait: commissionsPortrait.url, alt: "Fashion portrait in a flowing white gown against a grey studio backdrop" },
   { title: "The studio", label: "About / A point of view", to: "/about" as const, image: studio.url, portrait: studioPortrait.url, alt: "Expressive close-up portrait in a black cap by Lens Chronicle" },
-  { title: "A conversation", label: "Contact / Narasimha", to: "/contact" as const, image: contact.url, portrait: contactPortrait.url, alt: "Seated editorial portrait in a blue dress with the complete composition preserved" },
+  { title: "A conversation", label: "Contact / Narasimha", to: "/contact" as const, image: contact.url, portrait: contactPortrait.url, alt: "Fashion portrait in a patterned red and orange dress with windswept hair" },
 ];
 
 export function PhotographicChapters() {
