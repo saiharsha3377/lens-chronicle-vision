@@ -383,3 +383,6 @@ a{color:inherit;text-decoration:none}button{font:inherit}img{max-width:100%;disp
  .editorial-work-grid .work-meta{margin-top:16px;padding-top:12px;gap:8px}.editorial-work-grid .work-meta>span{font-size:28px}
  .work-edition .portfolio{padding-bottom:56px}
 }
+
+/* Override earlier opening aspect-ratio rules after the complete theme cascade. */
+.minimal-home .new-home-opening{width:100%;height:calc(100svh - 80px);min-height:0;max-height:none;aspect-ratio:auto;margin:0}
