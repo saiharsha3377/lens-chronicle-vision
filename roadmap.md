@@ -1,8 +1,8 @@
 # Roadmap
 
-- [ ] Remove swimwear photographs from every public presentation
-- [ ] Refine distinct full-screen chapters with animated navigation symbols and Drive photographs
-- [ ] Verify chapter navigation, mobile separation, animation and gallery filters
+- [x] Remove swimwear photographs from every public presentation
+- [x] Refine distinct full-screen chapters with animated navigation symbols and Drive photographs
+- [x] Verify chapter navigation, mobile separation, animation and gallery filters
 
 - [x] Expand Home with full-screen clickable photographic chapters and distinct arc-arrow links
 - [x] Verify section boundaries, page navigation, smooth scrolling and image framing on desktop/mobile
