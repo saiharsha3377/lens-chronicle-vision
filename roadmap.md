@@ -1,5 +1,8 @@
 # Roadmap
 
+- [x] Expand Home with full-screen clickable photographic chapters and distinct arc-arrow links
+- [x] Verify section boundaries, page navigation, smooth scrolling and image framing on desktop/mobile
+
 - [x] Refine true landscape photo, longer focus loader with visible 100, and borderless booking fields
 - [x] Verify photo composition, loader progression and fields across screen sizes
 

@@ -21,6 +21,7 @@
  --invitation-shade:oklch(0 0 0 / 70%);
  --section-space:100px;
  --section-gap:48px;
+ --chapter-shade:linear-gradient(180deg,oklch(0 0 0 / 25%),transparent 28%,transparent 58%,oklch(0 0 0 / 80%));
 }
 *{box-sizing:border-box;border-color:var(--border);letter-spacing:0}
 body{margin:0;background:var(--background);color:var(--foreground);font-family:var(--font-sans);font-size:15px;line-height:1.65}
@@ -265,6 +266,31 @@ a{color:inherit;text-decoration:none}button{font:inherit}img{max-width:100%;disp
 }
 @media(max-height:500px) and (min-width:601px){.journal-caption{min-height:56px}.journal-photo,.sequence-active .journal-photo img{height:32svh}.journal-frame:nth-child(even) .journal-photo{height:26svh}}
 
+/* Full-screen photographic page entries, preserving native document scrolling. */
+.minimal-home .new-home-opening{height:calc(100svh - 80px);min-height:0;max-height:none;aspect-ratio:auto;margin:0}
+.minimal-home .studio-introduction{min-height:100svh;align-content:center;border-bottom:0}
+.photo-chapter{height:160svh;position:relative;background:var(--background)}
+.chapter-screen{position:sticky;top:0;height:100svh;overflow:hidden}
+.chapter-link{display:block;position:relative;width:100%;height:100%;padding:0;white-space:normal;border:0;border-radius:0;background:var(--background);color:var(--foreground);overflow:hidden;text-align:left}
+.chapter-link:hover{background:var(--background);color:var(--foreground)}
+.chapter-link:after{content:"";position:absolute;inset:0;background:var(--chapter-shade);pointer-events:none}
+.chapter-photo{width:100%;height:100%;object-fit:contain;transform:scale(calc(1 + var(--chapter-progress,0) * .025));transition:opacity .3s}
+.chapter-top,.chapter-caption,.chapter-bottom{position:absolute;left:0;right:0;z-index:1}
+.chapter-top{top:40px;display:flex;justify-content:space-between;gap:20px;font-size:9px;text-transform:uppercase}
+.chapter-caption{bottom:110px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:end;transform:translateY(calc(var(--chapter-progress,0) * -16px))}
+.chapter-name{min-width:0}.chapter-name .kicker{color:var(--foreground);margin-bottom:20px}.chapter-name h2{font-size:96px;margin:0}
+.chapter-arrow{width:100px;height:100px;position:relative;display:grid;place-items:center;flex-shrink:0}
+.chapter-arrow>svg:first-child{position:absolute;inset:0;width:100%;height:100%;stroke:currentColor;stroke-width:.8;transition:transform .4s}
+.chapter-arrow>svg:last-child{width:36px;height:36px;stroke-width:1;transition:transform .4s}
+.chapter-link:hover .chapter-arrow>svg:first-child{transform:rotate(45deg)}
+.chapter-link:hover .chapter-arrow>svg:last-child{transform:translate(4px,-4px)}
+.chapter-bottom{bottom:35px;display:flex;justify-content:space-between;gap:24px;font-size:9px;text-transform:uppercase;border-top:1px solid var(--border);padding-top:18px}
+.chapter-link:focus-visible{outline:2px solid var(--foreground);outline-offset:-8px}
+@media(max-width:900px){.chapter-name h2{font-size:68px}.chapter-arrow{width:80px;height:80px}.chapter-top{top:28px}.chapter-caption{bottom:105px}.chapter-photo{height:auto;aspect-ratio:16/9;position:absolute;top:50%;transform:translateY(-58%)}.minimal-home .studio-introduction{padding-block:48px}}
+@media(max-width:600px){.chapter-name h2{font-size:44px}.chapter-name .kicker{font-size:8px;margin-bottom:14px}.chapter-arrow{width:62px;height:62px}.chapter-arrow>svg:last-child{width:26px;height:26px}.chapter-caption{gap:14px;bottom:100px}.chapter-top{font-size:8px}.chapter-top>span:last-child{display:none}.chapter-bottom{font-size:8px;bottom:28px}.chapter-photo{top:45%;transform:translateY(-50%)}.minimal-home .studio-introduction .focus-motion{width:180px;justify-self:center}}
+@media(max-height:500px){.chapter-caption{bottom:70px}.chapter-name h2{font-size:40px}.chapter-name .kicker{margin-bottom:8px}.chapter-top{top:20px}.chapter-bottom{bottom:18px;padding-top:10px}.chapter-arrow{width:60px;height:60px}.minimal-home .studio-introduction{grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:24px;padding-block:32px}}
+@media(prefers-reduced-motion:reduce){.photo-chapter{height:100svh}.chapter-screen{position:relative}.chapter-photo,.chapter-caption{transform:none}.chapter-photo{top:0;height:100%;object-fit:contain}}
+
 /* The Edit: full-composition, scroll-linked editorial plates. */
 .selected-edit{position:relative;border-bottom:1px solid var(--border)}
 .edit-stage{padding-block:var(--section-gap);background:var(--background)}
@@ -357,3 +383,6 @@ a{color:inherit;text-decoration:none}button{font:inherit}img{max-width:100%;disp
  .editorial-work-grid .work-meta{margin-top:16px;padding-top:12px;gap:8px}.editorial-work-grid .work-meta>span{font-size:28px}
  .work-edition .portfolio{padding-bottom:56px}
 }
+
+/* Override earlier opening aspect-ratio rules after the complete theme cascade. */
+.minimal-home .new-home-opening{width:100%;height:calc(100svh - 80px);min-height:0;max-height:none;aspect-ratio:auto;margin:0}
