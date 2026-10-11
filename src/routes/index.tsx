@@ -2,8 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 
 import { SiteLayout } from "@/components/site-layout";
 import { Button } from "@/components/ui/button";
-import landscapePhoto from "@/assets/web/home-landscape.webp.asset.json";
-import portraitPhoto from "@/assets/web/home-portrait.webp.asset.json";
+import landscapePhoto from "@/assets/home-landscape-wide.jpg";
 import { SelectedEdit } from "@/components/selected-edit";
 import { FocusMotion } from "@/components/focus-motion";
 
@@ -17,7 +16,7 @@ export const Route = createFileRoute("/")({
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "preload", as: "image", href: landscapePhoto.url, media: "(min-width: 901px)", fetchPriority: "high" }, { rel: "preload", as: "image", href: portraitPhoto.url, media: "(max-width: 900px)", fetchPriority: "high" }],
+    links: [{ rel: "preload", as: "image", href: landscapePhoto, fetchPriority: "high" }],
   }),
   component: HomePage,
 });
@@ -25,7 +24,7 @@ export const Route = createFileRoute("/")({
 function HomePage() {
  return <SiteLayout><main className="minimal-home">
    <section className="opening landscape-opening new-home-opening">
-    <picture><source media="(max-width: 900px)" srcSet={portraitPhoto.url}/><img className="hero-photo" src={landscapePhoto.url} alt="Seated fashion portrait in a flowing red embroidered dress by Lens Chronicle Photography" width="2000" height="1100" loading="eager" fetchPriority="high" decoding="async" /></picture>
+    <img className="hero-photo" src={landscapePhoto} alt="Seated fashion portrait in a flowing red embroidered dress by Lens Chronicle Photography" width="1920" height="1080" loading="eager" fetchPriority="high" decoding="async" />
    <div className="hero-copy editorial-container"><p className="kicker">Fashion · Editorial · Commercial</p><h1>Lens <em>Chronicle</em></h1><p className="hero-subtitle">PHOTOGRAPHY</p><div className="hero-actions"><Button asChild className="editorial-button"><Link to="/work">Explore the work <span aria-hidden="true">↗</span></Link></Button></div></div>
    <span className="hero-location">Hyderabad · India</span>
   </section>
