@@ -29,3 +29,4 @@
 - Homepage selected photographs use a dedicated full-composition editorial sequence with one photograph and its collection per plate, making each selection legible without cropping portraits.
 - Drive the selected-edit track and restrained image/caption parallax from cached stage dimensions in one requestAnimationFrame callback; retain native vertical gestures and render normal stacked plates for reduced motion to keep scrolling predictable.
 - Homepage page-entry chapters use unique landscape derivatives with full-composition portrait sources on tall mobile screens, distinct full-screen sticky compositions and semantic route links; cache scroll geometry, pause symbol animations offscreen and disable motion for reduced motion to preserve performance and accessibility.
+- Keep page-entry photographs separated with a responsive gap token and route links that reset scroll; use only the destination title over each photo to avoid duplicated site-chrome copy.
