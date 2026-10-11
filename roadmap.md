@@ -1,5 +1,10 @@
 # Roadmap
 
+- [x] Replace homepage photo with supplied landscape composition
+- [x] Separate Contact details and unboxed booking form, wire call/WhatsApp/email links
+- [x] Add centered-logo focus loader and verify desktop/mobile flows
+- [ ] Enable inquiry delivery - waiting for the user's Formspree endpoint
+
 - [x] Remove Portfolio eyebrow and redesign Selected work as asymmetric editorial spreads
 - [x] Verify gallery filters, image viewer and mobile/desktop layouts
 

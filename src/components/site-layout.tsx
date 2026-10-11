@@ -79,7 +79,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
           {navItems.map((item) => (
             <Link key={item.to} to={item.to} activeProps={{ className: "nav-active" }}>{item.label}</Link>
           ))}
-        <Button asChild variant="outline" className="header-book"><Link to="/contact">Book a Shoot</Link></Button></nav>
+        <Button asChild variant="outline" className="header-book"><Link to="/book">Book a Shoot</Link></Button></nav>
         <Button className="menu-trigger" variant="ghost" size="icon" type="button" onClick={() => setMenuOpen(true)} aria-label="Open menu" aria-expanded={menuOpen}>
           <Menu aria-hidden="true" />
         </Button>
@@ -88,7 +88,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
       {children}
 
       <footer className="site-footer premium-footer">
-        <div className="editorial-container footer-contact"><div><p className="kicker">Contact / Commissions</p><h2>Have a project<br/><em>in mind?</em></h2></div><Button asChild className="footer-inquiry"><Link to="/contact" aria-label="Discuss a project"><span aria-hidden="true">↗</span></Link></Button></div>
+        <div className="editorial-container footer-contact"><div><p className="kicker">Contact / Commissions</p><h2>Have a project<br/><em>in mind?</em></h2></div><Button asChild className="footer-inquiry"><Link to="/book" aria-label="Discuss a project"><span aria-hidden="true">↗</span></Link></Button></div>
         <div className="footer-columns editorial-container">
           <div className="footer-brand"><Monogram /><p>Luxury Fashion &amp;<br/>Editorial Photography</p></div>
           <div><p className="kicker">Explore</p><nav aria-label="Footer navigation">{navItems.map(item=><Link key={item.to} to={item.to}>{item.label}</Link>)}</nav></div>
@@ -110,6 +110,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
               </Link>
             ))}
           </nav>
+          <Button asChild variant="ghost" className="editorial-button menu-book"><Link to="/book" onClick={() => setMenuOpen(false)}>Book a Shoot ↗</Link></Button>
           <p>Fashion · Editorial · Commercial</p>
         </div>
       ) : null}
