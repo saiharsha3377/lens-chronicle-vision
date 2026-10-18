@@ -16,5 +16,5 @@ export const Route = createFileRoute("/work")({
 });
 
 function WorkPage() {
- return <SiteLayout><main className="inner-page work-edition"><header className="work-opening editorial-container"><h1 data-motion="lines"><span>Selected</span><span><em>work.</em></span></h1><div data-motion="from-right"><span className="kicker">Lens Chronicle / Archive</span><p>Fashion, people and the moments between.<br/>A selection from the studio.</p></div></header><section className="portfolio archive editorial-container" aria-label="Selected photographs"><WorkGallery/></section></main></SiteLayout>;
+ return <SiteLayout><main className="inner-page work-edition"><header className="work-opening editorial-container"><h1 data-motion="archive-title">Selected <em>work</em></h1><div className="archive-opening-details" data-motion="from-right"><span className="archive-exposure" aria-hidden="true"><i/><i/><i/><i/><i/><i/><i/><i/><i/></span><p>Fashion, people and the moments between.<br/>A selection from the studio.</p></div></header><section className="portfolio archive editorial-container" aria-label="Selected photographs"><WorkGallery/></section></main></SiteLayout>;
 }

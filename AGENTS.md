@@ -23,7 +23,7 @@
 - Assign each photograph to one content placement across public pages, treating different derivatives of the same original as one photograph, to prevent visual repetition.
 - Horizontal photo sequences use native vertical scrolling with sticky sections and requestAnimationFrame rail updates, never intercepted wheel/touch events; reduced motion keeps native rails to preserve accessibility and predictable performance.
 - Shared layout reveals use a single IntersectionObserver with one-time opacity/transform transitions to avoid continuous animation work.
-- Register dynamically filtered gallery items with the shared reveal observer; use distinct directional variants rather than continuous per-photo scroll handlers.
+- Register dynamically filtered gallery items with the shared reveal observer; use one-time directional photo shutters, caption transitions and focus marks rather than continuous per-photo scroll handlers, and disable these effects for reduced motion.
 - Render service commissions as alternating unframed photo/text rows and keep their aperture graphic transform-only and paused offscreen to preserve scroll performance.
 - Fit portrait images with contain inside stable frames across galleries and editorial sections, preserving complete compositions rather than using arbitrary cover crops.
 - Services uses an aperture graphic, About uses a viewfinder graphic, and the homepage studio uses a focus-plane graphic; pause them offscreen and disable motion for reduced-motion preferences to keep each presentation distinct.
