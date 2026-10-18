@@ -12,7 +12,7 @@ import studioPortrait from "@/assets/reference/hero-0286.webp.asset.json";
 import contactPortrait from "@/assets/chapters/conversation-portrait.webp.asset.json";
 
 const chapters = [
-  { title: "The archive", label: "Fashion · Editorial · Commercial", to: "/work" as const, image: archive.url, portrait: archivePortrait.url, alt: "Full-length fashion portrait in a black dress against a warm studio backdrop" },
+  { title: "The archive", label: "Portfolio / Selected work", to: "/work" as const, image: archive.url, portrait: archivePortrait.url, alt: "Full-length fashion portrait in a black dress against a warm studio backdrop" },
   { title: "Services", label: "Services / Made with intention", to: "/services" as const, image: commissions.url, portrait: commissionsPortrait.url, alt: "Fashion portrait in a flowing white gown against a grey studio backdrop" },
   { title: "The studio", label: "About / A point of view", to: "/about" as const, image: studio.url, portrait: studioPortrait.url, alt: "Expressive close-up portrait in a black cap by Lens Chronicle" },
   { title: "A conversation", label: "Contact / Narasimha", to: "/contact" as const, image: contact.url, portrait: contactPortrait.url, alt: "Fashion portrait in a patterned red and orange dress with windswept hair" },
@@ -58,9 +58,14 @@ export function PhotographicChapters() {
         <Button asChild variant="ghost" className="chapter-link">
           <Link to={chapter.to} resetScroll aria-label={`Explore ${chapter.title}`}>
             <picture className="chapter-picture"><source media="(max-width: 600px) and (min-height: 501px)" srcSet={chapter.portrait} /><img className="chapter-photo" src={chapter.image} alt={chapter.alt} width="1920" height="1080" loading="lazy" decoding="async" /></picture>
-            <div className="chapter-caption editorial-container">
-              <div className="chapter-name"><h2 id={`chapter-title-${index}`}>{chapter.title}</h2></div>
-              <span className="chapter-arrow" aria-hidden="true"><svg className="chapter-orbit" viewBox="0 0 100 100" fill="none"><path d="M50 7A43 43 0 0 1 93 50M50 93A43 43 0 0 1 7 50" /><path className="chapter-orbit-inner" d="M50 17A33 33 0 0 0 17 50M50 83A33 33 0 0 0 83 50" /></svg><ArrowUpRight className="chapter-direction" /></span>
+            <div className="chapter-caption chapter-centered">
+              <span className="chapter-index" aria-hidden="true"><i />{chapter.label.split(" / ")[1] ?? chapter.label}<i /></span>
+              <h2 id={`chapter-title-${index}`} className="chapter-heading">{chapter.title.split(" ").map((w, i) => <span key={i} style={{ transitionDelay: `${0.1 + i * 0.08}s` }}><span>{w}</span></span>)}</h2>
+              <span className="chapter-cue" aria-hidden="true">
+                <svg className="chapter-cue-ring" viewBox="0 0 100 100" fill="none"><circle className="cue-track" cx="50" cy="50" r="44" /><circle className="cue-draw" cx="50" cy="50" r="44" /><path className="cue-arc" d="M50 14A36 36 0 0 1 86 50" /><path className="cue-arc cue-arc-2" d="M50 86A36 36 0 0 1 14 50" /></svg>
+                <ArrowUpRight className="chapter-direction" />
+              </span>
+              <span className="chapter-explore" aria-hidden="true">Explore</span>
             </div>
           </Link>
         </Button>

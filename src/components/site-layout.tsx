@@ -74,7 +74,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
   return (
     <div className="site-shell" ref={shell}>
       <header className="site-header">
-        <Link className="brand-link" to="/" aria-label="Lens Chronicle home"><Monogram /><span>Lens <em>Chronicle</em></span></Link>
+        <Link className="brand-link" to="/" aria-label="Lens Chronicle home"><Monogram /></Link>
         <nav className="desktop-nav" aria-label="Primary navigation">
           {navItems.map((item) => (
             <Link key={item.to} to={item.to} activeProps={{ className: "nav-active" }}>{item.label}</Link>

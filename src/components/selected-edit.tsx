@@ -65,7 +65,7 @@ export function SelectedEdit() {
   return <div className="selected-edit" ref={root}>
     <section className="edit-stage" aria-labelledby="edit-title">
       <header className="edit-heading editorial-container">
-        <div><p className="kicker">Selected photographs / 02</p><h2 id="edit-title">The <em>edit.</em></h2></div>
+        <div><p className="kicker">Selected photographs / 02</p><h2 id="edit-title">The <em>edit</em></h2></div>
         <Button asChild variant="ghost" className="editorial-button"><Link to="/work">Full portfolio <span aria-hidden="true">↗</span></Link></Button>
       </header>
       <div className="edit-window"><div className="edit-track">

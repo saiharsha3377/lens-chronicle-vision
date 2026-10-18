@@ -28,9 +28,9 @@ function HomePage() {
    <section className="opening landscape-opening new-home-opening">
     <img className="hero-photo" src={landscapePhoto} alt="Seated fashion portrait in a flowing red embroidered dress by Lens Chronicle Photography" width="1920" height="1080" loading="eager" fetchPriority="high" decoding="async" />
    <div className="hero-copy editorial-container"><p className="kicker">Fashion · Editorial · Commercial</p><h1>Lens <em>Chronicle</em></h1><p className="hero-subtitle">PHOTOGRAPHY</p><div className="hero-actions"><Button asChild className="editorial-button"><Link to="/work">Explore the work <span aria-hidden="true">↗</span></Link></Button></div></div>
-   <span className="hero-location">Hyderabad · India</span>
+   
   </section>
-  <section className="studio-introduction editorial-container"><div className="studio-introduction-copy" data-motion="lines"><p className="kicker">Lens Chronicle / The studio</p><h2><span>Considered light.</span><span><em>Unmistakably you.</em></span></h2><p>Luxury fashion and editorial photography, made with intention. A Hyderabad studio for people, publications and brands with a distinct point of view.</p><Button asChild variant="ghost" className="editorial-button"><Link to="/about">Meet the studio <span aria-hidden="true">↗</span></Link></Button></div><FocusMotion/></section>
+  <section className="studio-introduction editorial-container"><div className="studio-introduction-copy" data-motion="lines"><h2><span>Considered light</span><span><em>Unmistakably you</em></span></h2><p>Luxury fashion and editorial photography, made with intention. A Hyderabad studio for people, publications and brands with a distinct point of view.</p><Button asChild variant="ghost" className="editorial-button"><Link to="/about">Meet the studio <span aria-hidden="true">↗</span></Link></Button></div><FocusMotion/></section>
    <SelectedEdit />
     <PhotographicChapters />
     <ProjectInvitation />
