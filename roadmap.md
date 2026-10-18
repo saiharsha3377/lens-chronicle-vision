@@ -1,5 +1,9 @@
 # Roadmap
 
+- [x] Rebuild About philosophy as a focus-pull statement and the closing as a "Have a project in mind?" invitation without brand lettering
+- [x] Move the project invitation out of the shared footer into About only, and verify links, reduced motion and desktop/mobile spacing
+
+
 - [x] Simplify repeated photo labels and add modest chapter gaps
 - [x] Add distinct non-swimwear photographs and verify separate page links
 
