@@ -1,5 +1,7 @@
 # Roadmap
 
+- [x] Refresh Contact with full name, no trailing period, visible Call/WhatsApp links and refined motion; verify desktop/mobile
+
 - [x] Simplify booking to fields and contact details, remove the extra heading label, and verify dropdowns on desktop/mobile
 
 - [x] Remove blank founder-photo framing and verify the real portrait appears
