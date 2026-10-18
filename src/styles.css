@@ -190,18 +190,7 @@ a{color:inherit;text-decoration:none}button{font:inherit}img{max-width:100%;disp
 .sequence-active .journal-photo{transform:translateY(var(--card-drift,0px));opacity:var(--card-presence,1)}
 .sequence-active .journal-caption{transform:translateY(calc(var(--card-drift,0px) * .35))}
 @media(max-height:500px){.horizontal-sequence.sequence-active>.journal-section{padding-block:16px}.journal-section .section-heading{margin-bottom:14px}.journal-section .section-heading .kicker{margin-bottom:10px}.journal-section h2{font-size:36px}.journal-photo,.sequence-active .journal-photo img{height:36svh}.journal-frame:nth-child(even) .journal-photo{height:30svh}.journal-caption{padding-top:8px;margin-top:10px}.journal-caption h3{font-size:20px}.journal-bottom{margin-top:12px}}
-.contact-sheet-motion{width:min(100%,340px);aspect-ratio:34/30;justify-self:center;color:var(--foreground)}
-.contact-sheet-motion svg{width:100%;height:100%;overflow:visible}
-.contact-sheet-motion rect,.contact-sheet-motion path,.contact-sheet-motion circle{stroke:currentColor;stroke-width:.7}
-.sheet-guide{opacity:.2}.sheet-composition{opacity:.35}
-.sheet-frame{transform-origin:170px 150px;animation:sheet-fan 10s ease-in-out infinite;animation-play-state:paused}
-.sheet-frame-0{--sheet-angle:-15deg;--sheet-offset:-36px;opacity:.35}
-.sheet-frame-1{--sheet-angle:15deg;--sheet-offset:36px;opacity:.55}
-.sheet-frame-2{--sheet-angle:0deg;--sheet-offset:0px}
-.contact-sheet-visible .sheet-frame{animation-play-state:running}
-@keyframes sheet-fan{0%,100%{transform:translateX(var(--sheet-offset)) rotate(var(--sheet-angle))}50%{transform:translateX(calc(var(--sheet-offset) * .4)) rotate(calc(var(--sheet-angle) * .35))}}
-@media(max-width:600px){.contact-sheet-motion{width:185px;justify-self:end}}
-@media(prefers-reduced-motion:reduce){.sheet-frame{animation:none;transform:translateX(var(--sheet-offset)) rotate(var(--sheet-angle))}.sequence-active .journal-photo,.sequence-active .journal-caption{transform:none;opacity:1}}
+@media(prefers-reduced-motion:reduce){.sequence-active .journal-photo,.sequence-active .journal-caption{transform:none;opacity:1}}
 
 /* Consistent section rhythm and safe mobile text/action tracks. */
 .studio-introduction,.about-editorial,.about-closing{padding-block:var(--section-space)}
@@ -422,3 +411,42 @@ a{color:inherit;text-decoration:none}button{font:inherit}img{max-width:100%;disp
 .about-signature span{font-size:11px;letter-spacing:.5em;color:var(--muted-foreground)}
 .about-signature small{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted-foreground)}
 @media(max-width:900px){.about-signature{align-items:flex-start;text-align:left;justify-self:start}.about-philosophy{text-align:left}.about-philosophy p{margin-inline:0}}
+
+/* About - viewfinder hero motion */
+.viewfinder-motion{width:min(100%,360px);aspect-ratio:6/5;justify-self:center;color:var(--foreground)}
+.viewfinder-motion svg{width:100%;height:100%;overflow:visible}
+.viewfinder-motion path,.viewfinder-motion circle{stroke:currentColor;stroke-width:.8;fill:none}
+.viewfinder-motion text{fill:currentColor;stroke:none;font:400 9px var(--font-sans);letter-spacing:2px;opacity:.5}
+.vf-grid{opacity:.14}
+.vf-brackets{animation:vf-hunt 7s ease-in-out infinite;animation-play-state:paused;transform-origin:180px 150px}
+.vf-focus{opacity:.7;animation:vf-pulse 3.4s ease-in-out infinite;animation-play-state:paused;transform-origin:180px 150px}
+.vf-focus-inner{animation-delay:1.7s}
+.vf-cross{opacity:.45}
+.vf-meter{opacity:.5}
+.vf-needle{fill:currentColor;animation:vf-meter 7s ease-in-out infinite;animation-play-state:paused}
+.viewfinder-visible .vf-brackets,.viewfinder-visible .vf-focus,.viewfinder-visible .vf-needle{animation-play-state:running}
+@keyframes vf-hunt{0%,100%{transform:scale(1.06);opacity:.55}35%,65%{transform:scale(1);opacity:1}}
+@keyframes vf-pulse{0%,100%{transform:scale(.85);opacity:.35}50%{transform:scale(1);opacity:.8}}
+@keyframes vf-meter{0%,100%{transform:translateX(0)}50%{transform:translateX(240px)}}
+
+/* About - new editorial sections */
+.about-hero{display:grid;grid-template-columns:1.2fr 1fr;gap:80px;align-items:center;padding-block:90px 70px;min-height:70svh}
+.about-hero h1{font-size:96px}
+.about-hero-role{color:var(--muted-foreground);font-size:12px;text-transform:uppercase;letter-spacing:3px;margin-top:26px}
+.about-disciplines{padding-block:80px;border-top:1px solid var(--border)}
+.about-disciplines h2{font-size:64px;margin-bottom:50px}
+.about-disciplines h2 span{display:block}
+.about-disciplines ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:0 60px}
+.about-disciplines li{display:flex;align-items:baseline;gap:22px;padding-block:22px;border-top:1px solid var(--border);font:italic 28px/1.3 var(--font-display);color:var(--primary)}
+.about-disciplines li span{font:400 10px var(--font-sans);color:var(--muted-foreground);letter-spacing:2px}
+.about-philosophy{text-align:center;padding-block:110px}
+.about-philosophy h2{font-size:76px}
+.about-philosophy h2 span{display:block}
+.about-philosophy p:not(.kicker){color:var(--muted-foreground);margin-top:26px;font-size:15px}
+@media(max-width:1100px){.about-hero h1{font-size:76px}.about-disciplines h2{font-size:52px}.about-philosophy h2{font-size:60px}}
+@media(max-width:900px){.about-hero{grid-template-columns:1fr;gap:40px;min-height:0;padding-block:70px 50px}.about-hero h1{font-size:64px}.viewfinder-motion{justify-self:start;width:min(100%,300px)}.about-disciplines ul{grid-template-columns:1fr}.about-disciplines h2{font-size:44px}.about-philosophy h2{font-size:48px}.about-philosophy{padding-block:80px}}
+@media(max-width:600px){.about-hero h1{font-size:52px}.about-disciplines li{font-size:24px}.about-philosophy h2{font-size:40px}}
+@media(prefers-reduced-motion:reduce){.vf-brackets,.vf-focus,.vf-needle{animation:none}.about-disciplines li{transition-delay:0ms}}
+.about-hero>*{min-width:0}
+.about-hero h1{overflow-wrap:break-word}
+.about-hero h1 span{display:block}
