@@ -6,13 +6,13 @@ import { ApertureMotion } from "@/components/aperture-motion";
 import { ProjectInvitation } from "@/components/project-invitation";
 
 export const Route = createFileRoute("/services")({
-  head: () => ({ meta: [
+  head: () => ({ links: [{ rel: "canonical", href: "https://ivory-lens-chronicle.lovable.app/services" }], meta: [
     { title: "Photography Services | Lens Chronicle" },
     { name: "description", content: "Fashion campaigns, editorial stories and commercial photography by Lens Chronicle." },
     { property: "og:title", content: "Photography Services | Lens Chronicle" },
     { property: "og:description", content: "Creative direction and photography for fashion, editorial and commercial shoots." },
-    { property: "og:type", content: "website" },
-    { name: "twitter:card", content: "summary_large_image" },
+    { property: "og:type", content: "website" }, { property: "og:url", content: "https://ivory-lens-chronicle.lovable.app/services" },
+   
   ]}),
   component: ServicesPage,
 });

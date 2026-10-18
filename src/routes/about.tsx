@@ -6,13 +6,13 @@ import { ViewfinderMotion } from "@/components/viewfinder-motion";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/about")({
-  head: () => ({ meta: [
+  head: () => ({ links: [{ rel: "canonical", href: "https://ivory-lens-chronicle.lovable.app/about" }], meta: [
     { title: "About the Founder | Lens Chronicle Photography" },
     { name: "description", content: "Meet Narasimha, founder and photographer behind Lens Chronicle Photography in Hyderabad, India." },
     { property: "og:title", content: "About the Founder | Lens Chronicle Photography" },
     { property: "og:description", content: "The story, philosophy and craft of Narasimha, founder of Lens Chronicle Photography." },
-    { property: "og:type", content: "website" },
-    { name: "twitter:card", content: "summary_large_image" },
+    { property: "og:type", content: "website" }, { property: "og:url", content: "https://ivory-lens-chronicle.lovable.app/about" },
+   
   ]}),
   component: AboutPage,
 });
