@@ -1,6 +1,6 @@
 # Roadmap
 
-- [ ] Refine portfolio photo reveals and micro animations, keep Selected work on one line without a period, and verify filters/viewer and unchanged footer
+- [x] Refine portfolio photo reveals and micro animations, keep Selected work on one line without a period, and verify filters/viewer and unchanged footer
 
 - [x] Refresh Contact with full name, no trailing period, visible Call/WhatsApp links and refined motion; verify desktop/mobile
 
