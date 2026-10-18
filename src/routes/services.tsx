@@ -10,7 +10,7 @@ export const Route = createFileRoute("/services")({
     { title: "Photography Services | Lens Chronicle" },
     { name: "description", content: "Fashion campaigns, editorial stories and commercial photography by Lens Chronicle." },
     { property: "og:title", content: "Photography Services | Lens Chronicle" },
-    { property: "og:description", content: "Creative direction and photography for fashion, editorial and commercial commissions." },
+    { property: "og:description", content: "Creative direction and photography for fashion, editorial and commercial shoots." },
     { property: "og:type", content: "website" },
     { name: "twitter:card", content: "summary_large_image" },
   ]}),
@@ -24,11 +24,11 @@ function ServicesPage() {
         <section className="services-intro editorial-container">
           <div data-motion="rise">
             <h1>Photography, <em>with intention</em></h1>
-            <p>From the first idea to the final image. Fashion, editorial and commercial commissions, shaped around your story.</p>
+            <p>From the first idea to the final image. Fashion, editorial and commercial photography, shaped around your story.</p>
           </div>
           <ApertureMotion />
         </section>
-        <section className="editorial-container services-page" aria-label="Photography commissions">
+        <section className="editorial-container services-page" aria-label="Photography services">
           <ServiceCollection />
         </section>
         <ProjectInvitation />

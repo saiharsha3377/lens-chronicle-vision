@@ -13,7 +13,7 @@ import contactPortrait from "@/assets/chapters/conversation-portrait.webp.asset.
 
 const chapters = [
   { title: "The archive", label: "Fashion · Editorial · Commercial", to: "/work" as const, image: archive.url, portrait: archivePortrait.url, alt: "Full-length fashion portrait in a black dress against a warm studio backdrop" },
-  { title: "Commissions", label: "Services / Made with intention", to: "/services" as const, image: commissions.url, portrait: commissionsPortrait.url, alt: "Fashion portrait in a flowing white gown against a grey studio backdrop" },
+  { title: "Services", label: "Services / Made with intention", to: "/services" as const, image: commissions.url, portrait: commissionsPortrait.url, alt: "Fashion portrait in a flowing white gown against a grey studio backdrop" },
   { title: "The studio", label: "About / A point of view", to: "/about" as const, image: studio.url, portrait: studioPortrait.url, alt: "Expressive close-up portrait in a black cap by Lens Chronicle" },
   { title: "A conversation", label: "Contact / Narasimha", to: "/contact" as const, image: contact.url, portrait: contactPortrait.url, alt: "Fashion portrait in a patterned red and orange dress with windswept hair" },
 ];
