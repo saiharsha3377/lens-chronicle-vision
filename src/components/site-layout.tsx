@@ -88,6 +88,12 @@ export function SiteLayout({ children }: { children: ReactNode }) {
       {children}
 
       <footer className="site-footer premium-footer">
+        <div className="footer-invite editorial-container">
+          <p className="kicker">Next step</p>
+          <h2>Have a project <em>in mind?</em></h2>
+          <p>Tell us about your concept, portfolio or brand story - we will shape it together.</p>
+          <Button asChild variant="outline" className="editorial-button"><Link to="/book">Book a Shoot ↗</Link></Button>
+        </div>
         <div className="footer-columns editorial-container">
           <div className="footer-brand"><Monogram /><p>Luxury Fashion &amp;<br/>Editorial Photography</p></div>
           <div><p className="kicker">Explore</p><nav aria-label="Footer navigation">{navItems.map(item=><Link key={item.to} to={item.to}>{item.label}</Link>)}</nav></div>
