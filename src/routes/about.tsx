@@ -29,8 +29,7 @@ function AboutPage() {
   return <SiteLayout><main className="inner-page about-edition">
     <section className="about-hero editorial-container">
       <div className="about-hero-copy" data-motion="lines">
-        <p className="kicker">About / The Founder</p>
-        <h1><span>Malluvalasa</span><span><em>Narasimha.</em></span></h1>
+        <h1 className="founder-name">Malluvalasa <em>Narasimha</em></h1>
         <p className="about-hero-role">Founder &amp; Photographer | Lens Chronicle Photography</p>
       </div>
       <ViewfinderMotion/>
@@ -39,7 +38,6 @@ function AboutPage() {
     <section className="about-editorial editorial-container">
       <figure className="about-portrait founder-portrait">
         <img src={founderPhoto.url} alt="Narasimha, founder of Lens Chronicle Photography, holding his camera in the studio" width="768" height="1152" loading="eager" decoding="async"/>
-        <figcaption>Narasimha / Hyderabad · India</figcaption>
       </figure>
       <div className="about-narrative" data-motion="from-right">
         <p className="kicker">01 / The beginning</p>
@@ -52,19 +50,21 @@ function AboutPage() {
 
     <section className="about-disciplines editorial-container">
       <p className="kicker" data-motion="rise">02 / The work</p>
-      <h2 data-motion="lines"><span>What the lens</span><span><em>is drawn to.</em></span></h2>
-      <ul>
-        {disciplines.map((item, index) => <li key={item} data-motion="from-left" style={{ transitionDelay: `${index * 70}ms` }}><span>{String(index + 1).padStart(2, "0")}</span>{item}</li>)}
+      <h2 className="single-line-title" data-motion="lines">What the lens <em>is drawn to.</em></h2>
+      <ul className="discipline-tags">
+        {disciplines.map((item, index) => <li key={item} data-motion="rise" style={{ transitionDelay: `${index * 80}ms` }}><i aria-hidden="true"/>{item}</li>)}
       </ul>
     </section>
 
     <section className="about-principles editorial-container">
       <p className="kicker" data-motion="rise">03 / The journey</p>
-      {journey.map((item, index) => <article className="principle-row" key={item.title} data-motion="lines">
-        <span>{String(index + 1).padStart(2, "0")}</span>
-        <h3><span>{item.title}</span></h3>
-        <p>{item.body}</p>
-      </article>)}
+      <div className="journey-cards">
+        {journey.map((item, index) => <article className="journey-card" key={item.title} data-motion="rise" style={{ transitionDelay: `${index * 120}ms` }}>
+          <i aria-hidden="true"/>
+          <h3>{item.title}</h3>
+          <p>{item.body}</p>
+        </article>)}
+      </div>
     </section>
 
     <section className="about-philosophy editorial-container">
@@ -74,7 +74,7 @@ function AboutPage() {
         <i aria-hidden="true"/>
       </div>
       <div className="philosophy-statement" data-motion="focus-pull">
-        <h2><span>Every frame</span><span><em>has a story.</em></span></h2>
+        <h2 className="philosophy-line"><span>Every frame <em>has a story</em></span></h2>
         <p>My goal is to bring that story to life through photography.</p>
         <div className="philosophy-scale" aria-hidden="true"><i/><i/><i/><i/><i/><i/><i/></div>
       </div>
