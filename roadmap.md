@@ -79,3 +79,4 @@
 - [x] Verify routes, filters, form states, mobile/desktop layouts, and diagnostics
 - Add real business details (WhatsApp, Instagram, phone, Hyderabad) to footer and contact page — done 2026-09-26
 - [x] Improve Services: remove eyebrow, single-line full-viewport hero without fullstop, animated commission rows with index marks and staggered copy, single-line invitation; footer unchanged
+- [x] Fix Services hero collision and empty space, remove photo numbering, drop photo hover effect, keep scroll reveals
