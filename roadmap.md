@@ -1,6 +1,6 @@
 # Roadmap
 
-- [ ] Refresh Contact with full name, no trailing period, visible Call/WhatsApp links and refined motion; verify desktop/mobile
+- [x] Refresh Contact with full name, no trailing period, visible Call/WhatsApp links and refined motion; verify desktop/mobile
 
 - [x] Simplify booking to fields and contact details, remove the extra heading label, and verify dropdowns on desktop/mobile
 
