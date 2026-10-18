@@ -1,6 +1,6 @@
 # Roadmap
 
-- [ ] Simplify booking to fields and contact details, remove the extra heading label, and verify dropdowns on desktop/mobile
+- [x] Simplify booking to fields and contact details, remove the extra heading label, and verify dropdowns on desktop/mobile
 
 - [x] Remove blank founder-photo framing and verify the real portrait appears
 - [x] Move the animated invitation to Home and Services only and remove the footer pitch
