@@ -55,4 +55,5 @@ export const works: Work[] = [
   { src: ceremonyThreeThumb.url, fullSrc: ceremonyThree.url, title: "Petal Study", category: "Fashion", alt: "Full-length fashion portrait in a pale blue floral lehenga against a grey studio backdrop", shape: "classic" },
   { src: cityPortrait.url, fullSrc: cityPortrait.url, title: "City Poise", category: "Editorial", alt: "Outdoor portrait in a black dress with sunglasses and a handbag", shape: "portrait" },
   { src: garmentPortrait.url, fullSrc: garmentPortrait.url, title: "Ivory Detail", category: "Commercial", alt: "Portrait showcasing a white embroidered blouse, skirt and statement earrings", shape: "classic" },
+  { src: coralSari.url, fullSrc: coralSari.url, title: "Coral Grace", category: "Fashion", alt: "Fashion portrait in a coral sari with traditional styling", shape: "portrait" },
 ];
