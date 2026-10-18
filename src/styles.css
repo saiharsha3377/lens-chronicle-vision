@@ -449,3 +449,4 @@ a{color:inherit;text-decoration:none}button{font:inherit}img{max-width:100%;disp
 @media(prefers-reduced-motion:reduce){.vf-brackets,.vf-focus,.vf-needle{animation:none}.about-disciplines li{transition-delay:0ms}}
 .about-hero>*{min-width:0}
 .about-hero h1{overflow-wrap:break-word}
+.about-hero h1 span{display:block}
