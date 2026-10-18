@@ -190,18 +190,7 @@ a{color:inherit;text-decoration:none}button{font:inherit}img{max-width:100%;disp
 .sequence-active .journal-photo{transform:translateY(var(--card-drift,0px));opacity:var(--card-presence,1)}
 .sequence-active .journal-caption{transform:translateY(calc(var(--card-drift,0px) * .35))}
 @media(max-height:500px){.horizontal-sequence.sequence-active>.journal-section{padding-block:16px}.journal-section .section-heading{margin-bottom:14px}.journal-section .section-heading .kicker{margin-bottom:10px}.journal-section h2{font-size:36px}.journal-photo,.sequence-active .journal-photo img{height:36svh}.journal-frame:nth-child(even) .journal-photo{height:30svh}.journal-caption{padding-top:8px;margin-top:10px}.journal-caption h3{font-size:20px}.journal-bottom{margin-top:12px}}
-.contact-sheet-motion{width:min(100%,340px);aspect-ratio:34/30;justify-self:center;color:var(--foreground)}
-.contact-sheet-motion svg{width:100%;height:100%;overflow:visible}
-.contact-sheet-motion rect,.contact-sheet-motion path,.contact-sheet-motion circle{stroke:currentColor;stroke-width:.7}
-.sheet-guide{opacity:.2}.sheet-composition{opacity:.35}
-.sheet-frame{transform-origin:170px 150px;animation:sheet-fan 10s ease-in-out infinite;animation-play-state:paused}
-.sheet-frame-0{--sheet-angle:-15deg;--sheet-offset:-36px;opacity:.35}
-.sheet-frame-1{--sheet-angle:15deg;--sheet-offset:36px;opacity:.55}
-.sheet-frame-2{--sheet-angle:0deg;--sheet-offset:0px}
-.contact-sheet-visible .sheet-frame{animation-play-state:running}
-@keyframes sheet-fan{0%,100%{transform:translateX(var(--sheet-offset)) rotate(var(--sheet-angle))}50%{transform:translateX(calc(var(--sheet-offset) * .4)) rotate(calc(var(--sheet-angle) * .35))}}
-@media(max-width:600px){.contact-sheet-motion{width:185px;justify-self:end}}
-@media(prefers-reduced-motion:reduce){.sheet-frame{animation:none;transform:translateX(var(--sheet-offset)) rotate(var(--sheet-angle))}.sequence-active .journal-photo,.sequence-active .journal-caption{transform:none;opacity:1}}
+@media(prefers-reduced-motion:reduce){.sequence-active .journal-photo,.sequence-active .journal-caption{transform:none;opacity:1}}
 
 /* Consistent section rhythm and safe mobile text/action tracks. */
 .studio-introduction,.about-editorial,.about-closing{padding-block:var(--section-space)}
