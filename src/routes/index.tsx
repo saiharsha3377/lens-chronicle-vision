@@ -9,16 +9,17 @@ import { PhotographicChapters } from "@/components/photographic-chapters";
 import { ProjectInvitation } from "@/components/project-invitation";
 
 export const Route = createFileRoute("/")({
-  head: () => ({ links: [{ rel: "canonical", href: "https://ivory-lens-chronicle.lovable.app/" }],
+  head: () => ({
     meta: [
       { title: "Lens Chronicle Photography | Fashion, Editorial & Commercial" },
       { name: "description", content: "Lens Chronicle creates fashion, editorial and commercial photography with clarity, character and atmosphere." },
       { property: "og:title", content: "Lens Chronicle Photography" },
       { property: "og:description", content: "Fashion, editorial and commercial photography with a refined visual point of view." },
-      { property: "og:type", content: "website" }, { property: "og:url", content: "https://ivory-lens-chronicle.lovable.app/" }, { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:type", content: "website" }, { property: "og:url", content: "https://ivory-lens-chronicle.lovable.app/" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "preload", as: "image", href: landscapePhoto, fetchPriority: "high" }],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify({ "@context": "https://schema.org", "@type": "ProfessionalService", name: "Lens Chronicle Photography", url: "https://ivory-lens-chronicle.lovable.app/", telephone: "+919652340008", founder: { "@type": "Person", name: "Malluvalasa Narasimha" }, address: { "@type": "PostalAddress", addressLocality: "Hyderabad", addressCountry: "IN" }, sameAs: ["https://www.instagram.com/lenschroniclephotography"] }) }],
+    links: [{ rel: "canonical", href: "https://ivory-lens-chronicle.lovable.app/" }, { rel: "preload", as: "image", href: landscapePhoto, fetchPriority: "high" }],
   }),
   component: HomePage,
 });
