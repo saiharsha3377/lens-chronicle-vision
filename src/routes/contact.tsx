@@ -1,15 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
-import { ArrowUpRight, Phone, ChevronDown } from "lucide-react";
+import { ArrowUpRight, Phone } from "lucide-react";
 
 import { PHONE_DISPLAY, PHONE_TEL, SiteLayout, WHATSAPP_URL, WhatsAppIcon } from "@/components/site-layout";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({ meta: [
-    { title: "Contact Narasimha | Lens Chronicle Photography" },
-    { name: "description", content: "Contact Narasimha at Lens Chronicle Photography by phone, WhatsApp or email." },
-    { property: "og:title", content: "Contact Narasimha | Lens Chronicle Photography" },
+    { title: "Contact Malluvalasa Narasimha | Lens Chronicle Photography" },
+    { name: "description", content: "Contact Malluvalasa Narasimha at Lens Chronicle Photography by phone, WhatsApp or email." },
+    { property: "og:title", content: "Contact Malluvalasa Narasimha | Lens Chronicle Photography" },
     { property: "og:description", content: "Reach the Hyderabad studio directly by call, WhatsApp or email." },
     { property: "og:type", content: "website" },
     { name: "twitter:card", content: "summary_large_image" },
@@ -18,15 +17,24 @@ export const Route = createFileRoute("/contact")({
 });
 
 function ContactPage() {
-  const [mobileOpen, setMobileOpen] = useState(false);
   return <SiteLayout><main className="inner-page direct-contact editorial-container">
-    <h1>Contact<em>.</em></h1>
+    <header className="contact-opening">
+      <h1 data-motion="lines">Contact</h1>
+      <div className="contact-signal" aria-hidden="true">
+        <svg viewBox="0 0 160 160" fill="none">
+          <circle className="contact-signal-guide" cx="80" cy="80" r="62" />
+          <circle className="contact-signal-orbit" cx="80" cy="80" r="62" pathLength="100" />
+          <path className="contact-signal-brackets" d="M48 60V48H60 M100 48H112V60 M112 100V112H100 M60 112H48V100" />
+          <path className="contact-signal-arrow" d="M66 94L94 66 M68 66H94V92" />
+        </svg>
+      </div>
+    </header>
     <dl className="direct-contact-details">
-      <div><dt>Name</dt><dd>Narasimha</dd></div>
-      <div><dt>Mobile</dt><dd><Button variant="ghost" className="contact-mobile-trigger" onClick={() => setMobileOpen(open => !open)} aria-expanded={mobileOpen} aria-controls="mobile-options">{PHONE_DISPLAY}<ChevronDown aria-hidden="true"/></Button>
-        {mobileOpen && <div id="mobile-options" className="contact-mobile-options"><Button asChild variant="ghost"><a href={PHONE_TEL}><Phone/>Call</a></Button><Button asChild variant="ghost"><a href={WHATSAPP_URL} target="_blank" rel="noreferrer"><WhatsAppIcon/>WhatsApp</a></Button></div>}
+      <div data-motion="lines"><dt>Name</dt><dd className="contact-full-name">Malluvalasa <em>Narasimha</em></dd></div>
+      <div data-motion="lines"><dt>Mobile</dt><dd><a className="contact-number" href={PHONE_TEL}>{PHONE_DISPLAY}</a>
+        <div className="contact-mobile-options"><Button asChild variant="ghost"><a href={PHONE_TEL}><Phone aria-hidden="true"/>Call<ArrowUpRight aria-hidden="true"/></a></Button><Button asChild variant="ghost"><a href={WHATSAPP_URL} target="_blank" rel="noreferrer"><WhatsAppIcon/>WhatsApp<ArrowUpRight aria-hidden="true"/></a></Button></div>
       </dd></div>
-      <div><dt>Email</dt><dd><a className="contact-email" href="mailto:lenschroniclephotography@gmail.com">lenschroniclephotography@gmail.com<ArrowUpRight aria-hidden="true"/></a></dd></div>
+      <div data-motion="lines"><dt>Email</dt><dd><a className="contact-email" href="mailto:lenschroniclephotography@gmail.com"><span>lenschroniclephotography@gmail.com</span><ArrowUpRight aria-hidden="true"/></a></dd></div>
     </dl>
   </main></SiteLayout>;
 }
