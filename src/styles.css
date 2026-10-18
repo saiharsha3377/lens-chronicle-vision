@@ -743,7 +743,7 @@ a{color:inherit;text-decoration:none}button{font:inherit}img{max-width:100%;disp
 @media(max-width:900px){
  .photo-chapter{height:auto;aspect-ratio:16/9}
  .chapter-screen{position:relative;height:100%}
- .chapter-picture,.chapter-picture{position:absolute;inset:0;top:0;bottom:0;height:100%}
+ .photo-chapter .chapter-picture{position:absolute;inset:0;top:0;bottom:0;height:100%}
  .chapter-photo,.chapter-link:hover .chapter-photo{position:absolute;inset:0;top:0;width:100%;height:100%;aspect-ratio:auto;object-fit:cover;transform:none}
  .chapter-caption.chapter-centered,.photo-chapter-2 .chapter-caption.chapter-centered,.photo-chapter-3 .chapter-caption.chapter-centered,.photo-chapter-4 .chapter-caption.chapter-centered{gap:10px;transform:translate(-50%,-50%)}
  .chapter-heading{font-size:clamp(30px,8vw,64px)}
