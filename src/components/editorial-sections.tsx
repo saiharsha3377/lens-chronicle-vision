@@ -11,10 +11,9 @@ export function ServiceCollection({ preview = false }: { preview?: boolean }) {
         <article className={preview ? 'service-card' : 'commission-row'} data-motion={rowMotions[index % rowMotions.length]} key={service.title}>
           <div className="commission-photo" data-motion="image">
             <img src={service.image} alt={service.title + ' by Lens Chronicle'} width="1067" height="1600" loading="lazy" decoding="async" />
-            <span className="commission-index" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
           </div>
           <div className="commission-copy">
-            <p className="kicker">{String(index + 1).padStart(2, '0')} / Commissions</p>
+            <p className="kicker">Commissions</p>
             <h2>{service.title}</h2>
             <p>{service.body}</p>
             <Button asChild variant="ghost" className="editorial-button">
