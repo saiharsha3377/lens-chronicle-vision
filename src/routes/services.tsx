@@ -11,8 +11,8 @@ export const Route = createFileRoute("/services")({
     { name: "description", content: "Fashion campaigns, editorial stories and commercial photography by Lens Chronicle." },
     { property: "og:title", content: "Photography Services | Lens Chronicle" },
     { property: "og:description", content: "Creative direction and photography for fashion, editorial and commercial shoots." },
-    { property: "og:type", content: "website" }, { property: "og:url", content: "https://ivory-lens-chronicle.lovable.app/services" }, { name: "twitter:card", content: "summary_large_image" },
-    { name: "twitter:card", content: "summary_large_image" },
+    { property: "og:type", content: "website" }, { property: "og:url", content: "https://ivory-lens-chronicle.lovable.app/services" },
+   
   ]}),
   component: ServicesPage,
 });

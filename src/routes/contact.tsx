@@ -10,8 +10,8 @@ export const Route = createFileRoute("/contact")({
     { name: "description", content: "Contact Malluvalasa Narasimha at Lens Chronicle Photography by phone, WhatsApp or email." },
     { property: "og:title", content: "Contact Malluvalasa Narasimha | Lens Chronicle Photography" },
     { property: "og:description", content: "Reach the Hyderabad studio directly by call, WhatsApp or email." },
-    { property: "og:type", content: "website" }, { property: "og:url", content: "https://ivory-lens-chronicle.lovable.app/contact" }, { name: "twitter:card", content: "summary_large_image" },
-    { name: "twitter:card", content: "summary_large_image" },
+    { property: "og:type", content: "website" }, { property: "og:url", content: "https://ivory-lens-chronicle.lovable.app/contact" },
+   
   ]}),
   component: ContactPage,
 });

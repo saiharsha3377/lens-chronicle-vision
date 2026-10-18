@@ -9,8 +9,8 @@ export const Route = createFileRoute("/work")({
     { name: "description", content: "Explore Lens Chronicle fashion, editorial and commercial photography by category." },
     { property: "og:title", content: "Selected Work | Lens Chronicle Photography" },
     { property: "og:description", content: "A filterable portfolio of fashion, editorial and commercial photography." },
-    { property: "og:type", content: "website" }, { property: "og:url", content: "https://ivory-lens-chronicle.lovable.app/work" }, { name: "twitter:card", content: "summary_large_image" },
-    { name: "twitter:card", content: "summary_large_image" },
+    { property: "og:type", content: "website" }, { property: "og:url", content: "https://ivory-lens-chronicle.lovable.app/work" },
+   
   ]}),
   component: WorkPage,
 });

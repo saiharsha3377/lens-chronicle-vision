@@ -11,8 +11,8 @@ export const Route = createFileRoute("/about")({
     { name: "description", content: "Meet Narasimha, founder and photographer behind Lens Chronicle Photography in Hyderabad, India." },
     { property: "og:title", content: "About the Founder | Lens Chronicle Photography" },
     { property: "og:description", content: "The story, philosophy and craft of Narasimha, founder of Lens Chronicle Photography." },
-    { property: "og:type", content: "website" }, { property: "og:url", content: "https://ivory-lens-chronicle.lovable.app/about" }, { name: "twitter:card", content: "summary_large_image" },
-    { name: "twitter:card", content: "summary_large_image" },
+    { property: "og:type", content: "website" }, { property: "og:url", content: "https://ivory-lens-chronicle.lovable.app/about" },
+   
   ]}),
   component: AboutPage,
 });

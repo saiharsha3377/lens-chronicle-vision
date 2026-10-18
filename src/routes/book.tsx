@@ -13,8 +13,8 @@ export const Route = createFileRoute("/book")({
     { name: "description", content: "Share your fashion, editorial or commercial photography project with Lens Chronicle." },
     { property: "og:title", content: "Book a Shoot | Lens Chronicle Photography" },
     { property: "og:description", content: "Tell Lens Chronicle about your project, timeline and budget." },
-    { property: "og:type", content: "website" }, { property: "og:url", content: "https://ivory-lens-chronicle.lovable.app/book" }, { name: "twitter:card", content: "summary_large_image" },
-    { name: "twitter:card", content: "summary_large_image" },
+    { property: "og:type", content: "website" }, { property: "og:url", content: "https://ivory-lens-chronicle.lovable.app/book" },
+   
   ]}),
   component: BookingPage,
 });
