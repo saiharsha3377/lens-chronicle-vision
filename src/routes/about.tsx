@@ -52,7 +52,7 @@ function AboutPage() {
       <p className="kicker" data-motion="rise">02 / The work</p>
       <h2 className="single-line-title" data-motion="lines">What the lens <em>is drawn to.</em></h2>
       <ul className="discipline-tags">
-        {disciplines.map((item, index) => <li key={item} data-motion="rise" style={{ transitionDelay: `${index * 80}ms` }}><i aria-hidden="true"/>{item}</li>)}
+        {disciplines.map((item, index) => <li key={item} data-motion="rise" style={{ transitionDelay: `${index * 80}ms` }}><i aria-hidden="true"/><span>{item}</span></li>)}
       </ul>
     </section>
 
@@ -68,12 +68,9 @@ function AboutPage() {
     </section>
 
     <section className="about-philosophy editorial-container">
-      <div className="philosophy-rail" data-motion="rise">
-        <span>04</span>
-        <p>My philosophy</p>
-        <i aria-hidden="true"/>
-      </div>
       <div className="philosophy-statement" data-motion="focus-pull">
+        <p className="kicker">04 / My philosophy</p>
+        <span className="philosophy-frame" aria-hidden="true"><i/><i/><i/><i/></span>
         <h2 className="philosophy-line"><span>Every frame <em>has a story</em></span></h2>
         <p>My goal is to bring that story to life through photography.</p>
         <div className="philosophy-scale" aria-hidden="true"><i/><i/><i/><i/><i/><i/><i/></div>
