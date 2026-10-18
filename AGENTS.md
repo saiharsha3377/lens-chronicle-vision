@@ -25,7 +25,7 @@
 - Register dynamically filtered gallery items with the shared reveal observer; use distinct directional variants rather than continuous per-photo scroll handlers.
 - Render service commissions as alternating unframed photo/text rows and keep their aperture graphic transform-only and paused offscreen to preserve scroll performance.
 - Fit portrait images with contain inside stable frames across galleries and editorial sections, preserving complete compositions rather than using arbitrary cover crops.
-- Services uses an aperture graphic, About uses a contact-sheet graphic, and the homepage studio uses a focus-plane graphic; pause them offscreen and disable motion for reduced-motion preferences to keep each presentation distinct.
+- Services uses an aperture graphic, About uses a viewfinder graphic, and the homepage studio uses a focus-plane graphic; pause them offscreen and disable motion for reduced-motion preferences to keep each presentation distinct.
 - Homepage selected photographs use a dedicated full-composition editorial sequence with one photograph and its collection per plate, making each selection legible without cropping portraits.
 - Drive the selected-edit track and restrained image/caption parallax from cached stage dimensions in one requestAnimationFrame callback; retain native vertical gestures and render normal stacked plates for reduced motion to keep scrolling predictable.
 - Homepage page-entry chapters use unique landscape derivatives with full-composition portrait sources on tall mobile screens, distinct full-screen sticky compositions and semantic route links; cache scroll geometry, pause symbol animations offscreen and disable motion for reduced motion to preserve performance and accessibility.
