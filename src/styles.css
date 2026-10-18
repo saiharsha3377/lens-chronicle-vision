@@ -412,3 +412,13 @@ a{color:inherit;text-decoration:none}button{font:inherit}img{max-width:100%;disp
 
 /* Override earlier opening aspect-ratio rules after the complete theme cascade. */
 .minimal-home .new-home-opening{width:100%;height:calc(100svh - 80px);min-height:0;max-height:none;aspect-ratio:auto;margin:0}
+.about-philosophy{padding-block:var(--section-space);text-align:center}
+.about-philosophy h2{font-size:clamp(52px,8vw,110px);line-height:1.02}
+.about-philosophy h2 span{display:block}
+.about-philosophy p{color:var(--muted-foreground);line-height:1.9;max-width:560px;margin:32px auto 0}
+.founder-portrait img{background:linear-gradient(180deg,color-mix(in oklab,var(--foreground) 6%,transparent),transparent)}
+.about-signature{display:flex;flex-direction:column;gap:10px;align-items:flex-end;text-align:right;justify-self:end}
+.about-signature p{font-family:var(--font-heading);font-size:44px;line-height:1.05;margin:0}
+.about-signature span{font-size:11px;letter-spacing:.5em;color:var(--muted-foreground)}
+.about-signature small{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted-foreground)}
+@media(max-width:900px){.about-signature{align-items:flex-start;text-align:left;justify-self:start}.about-philosophy{text-align:left}.about-philosophy p{margin-inline:0}}
