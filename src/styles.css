@@ -612,8 +612,6 @@ a{color:inherit;text-decoration:none}button{font:inherit}img{max-width:100%;disp
 .commission-photo img{transition:transform 1.4s cubic-bezier(.16,1,.3,1),opacity 1s ease}
 .scroll-reveal[data-motion="image"] .commission-photo img,.commission-photo.scroll-reveal img{transform:scale(1.08);opacity:0}
 .commission-photo.scroll-reveal.reveal-visible img{transform:none;opacity:1}
-.commission-index{position:absolute;top:18px;left:20px;font:italic 300 clamp(28px,3vw,40px)/1 var(--font-display);color:var(--cream);opacity:0;transform:translateY(14px);transition:opacity .8s ease .35s,transform .8s cubic-bezier(.16,1,.3,1) .35s;text-shadow:0 1px 12px rgba(0,0,0,.45)}
-.commission-photo.reveal-visible .commission-index{opacity:.9;transform:none}
 .commission-row .commission-copy>*{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .9s cubic-bezier(.16,1,.3,1)}
 .commission-row.reveal-visible .commission-copy>*{opacity:1;transform:none}
 .commission-row.reveal-visible .commission-copy>*:nth-child(2){transition-delay:.1s}
@@ -630,7 +628,6 @@ a{color:inherit;text-decoration:none}button{font:inherit}img{max-width:100%;disp
 
 @media(prefers-reduced-motion:reduce){
  .commission-photo.scroll-reveal img{transform:none;opacity:1}
- .commission-index{opacity:.9;transform:none}
  .commission-row .commission-copy>*{opacity:1;transform:none}
  .commission-row:hover .commission-photo img{transform:none}
 }
