@@ -17,6 +17,7 @@
 - Gallery cards use lightweight preview images while the larger derivative loads only when a visitor opens an image, keeping scroll work predictable.
 - The work archive uses asymmetric CSS grid photographic spreads with natural image proportions and a separate category/count toolbar; mobile narrows the offsets rather than cropping photographs.
 - Contact is a direct-details route; booking and the Formspree inquiry form live at /book so navigation keeps the two visitor intents separate, with no local persistence.
+- Booking dropdowns use shared Radix Select controls with controlled values and named form inputs so keyboard interaction, submission and successful resets stay consistent.
 - Mount the initial focus loader once in the root, use time-based monotonic presentation progress gated by eager-image/font readiness, hold 100 before fading, and cap waiting to prevent indefinite blocking.
 - Reference-site image pointers and editorial content live in `src/lib/reference-design.ts`; shared service collections live in `src/components/editorial-sections.tsx`. Render the shared `ProjectInvitation` explicitly on Home and Services only so the footer remains a directory and other pages have no repeated pitch.
 - Assign each photograph to one content placement across public pages, treating different derivatives of the same original as one photograph, to prevent visual repetition.
