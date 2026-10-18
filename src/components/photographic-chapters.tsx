@@ -57,7 +57,7 @@ export function PhotographicChapters() {
       <div className="chapter-screen">
         <Button asChild variant="ghost" className="chapter-link">
           <Link to={chapter.to} resetScroll aria-label={`Explore ${chapter.title}`}>
-            <picture className="chapter-picture"><source media="(max-width: 600px) and (min-height: 501px)" srcSet={chapter.portrait} /><img className="chapter-photo" src={chapter.image} alt={chapter.alt} width="1920" height="1080" loading="lazy" decoding="async" /></picture>
+            <picture className="chapter-picture"><img className="chapter-photo" src={chapter.image} alt={chapter.alt} width="1920" height="1080" loading="lazy" decoding="async" /></picture>
             <div className="chapter-caption chapter-centered">
               <span className="chapter-index" aria-hidden="true"><i />{chapter.label.split(" / ")[1] ?? chapter.label}<i /></span>
               <h2 id={`chapter-title-${index}`} className="chapter-heading">{chapter.title.split(" ").map((w, i) => <span key={i} style={{ transitionDelay: `${0.1 + i * 0.08}s` }}><span>{w}</span></span>)}</h2>

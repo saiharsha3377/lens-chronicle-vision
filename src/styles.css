@@ -738,3 +738,20 @@ a{color:inherit;text-decoration:none}button{font:inherit}img{max-width:100%;disp
 .chapter-link:hover .chapter-index i{width:60px}
 @media(max-width:600px){.chapter-cue{width:66px;height:66px}.chapter-cue .chapter-direction{width:22px;height:22px}.chapter-centered{gap:16px}}
 @media(prefers-reduced-motion:reduce){.chapter-centered *{transition:none!important;animation:none!important}.chapter-index,.chapter-cue{opacity:1;transform:none}.chapter-index i{width:36px}.chapter-heading>span>span{transform:none}.cue-draw{stroke-dashoffset:0}}
+
+/* Mobile: chapters show the same landscape photos as desktop */
+@media(max-width:900px){
+ .photo-chapter{height:auto;aspect-ratio:16/9}
+ .chapter-screen{position:relative;height:100%}
+ .photo-chapter .chapter-picture{position:absolute;inset:0;top:0;bottom:0;height:100%}
+ .chapter-photo,.chapter-link:hover .chapter-photo{position:absolute;inset:0;top:0;width:100%;height:100%;aspect-ratio:auto;object-fit:cover;transform:none}
+ .chapter-caption.chapter-centered,.photo-chapter-2 .chapter-caption.chapter-centered,.photo-chapter-3 .chapter-caption.chapter-centered,.photo-chapter-4 .chapter-caption.chapter-centered{gap:10px;transform:translate(-50%,-50%)}
+ .chapter-heading{font-size:clamp(30px,8vw,64px)}
+ .chapter-index{font-size:8px;letter-spacing:.24em;gap:10px}
+ .chapter-visible .chapter-index i{width:22px}
+ .chapter-cue{width:clamp(40px,10vw,72px);height:clamp(40px,10vw,72px)}
+ .chapter-cue .chapter-direction{width:40%;height:40%}
+ .chapter-explore{display:none}
+ :root{--photo-chapter-gap:20px}
+}
+@media(max-width:380px){.chapter-index{display:none}}
