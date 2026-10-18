@@ -705,3 +705,36 @@ a{color:inherit;text-decoration:none}button{font:inherit}img{max-width:100%;disp
 @media(max-width:900px){.svc-steps{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:56px}.svc-photo{height:500px}}
 @media(max-width:600px){.svc-row{grid-template-columns:minmax(0,1fr);gap:30px;padding-block:50px}.svc-row-flip .svc-photo{order:0}.svc-photo{height:min(460px,64svh)}.svc-steps{grid-template-columns:minmax(0,1fr);padding:0 0 0 28px;row-gap:40px}.svc-steps-line{top:0;bottom:0;left:5px;right:auto;width:1px;height:auto;transform:scaleY(0);transform-origin:top}.svc-steps.svc-in .svc-steps-line{transform:scaleY(1)}.svc-step-node{top:6px;left:-28px}.svc-steps h3{margin-top:0}.svc-marquee{margin-bottom:10px}}
 @media(prefers-reduced-motion:reduce){.svc-wrap *{animation:none!important;transition:none!important}.svc-photo img{transform:none;scale:1;filter:none}}
+
+/* Home chapters - centered titles with animated cue */
+.chapter-caption.chapter-centered,.photo-chapter-2 .chapter-caption.chapter-centered,.photo-chapter-3 .chapter-caption.chapter-centered,.photo-chapter-4 .chapter-caption.chapter-centered{top:50%;bottom:auto;left:50%;right:auto;width:min(90%,900px);transform:translate(-50%,calc(-50% + var(--chapter-progress,0) * -18px));display:flex;flex-direction:column;align-items:center;gap:22px;text-align:center}
+.chapter-link:after{background:radial-gradient(ellipse at center,oklch(0 0 0 / 45%),oklch(0 0 0 / 10%) 60%,transparent)}
+.chapter-photo{transition:transform 1.4s cubic-bezier(.16,1,.3,1),filter .8s ease}
+.chapter-link:hover .chapter-photo{transform:scale(1.03);filter:brightness(.85)}
+@media(max-width:900px){.chapter-link:hover .chapter-photo{transform:translateY(-58%)}}
+@media(max-width:600px) and (min-height:501px){.chapter-picture{top:0;bottom:0}.chapter-link:hover .chapter-photo{transform:none}}
+.chapter-index{display:inline-flex;align-items:center;gap:14px;font-size:10px;letter-spacing:.3em;text-transform:uppercase;opacity:0;transition:opacity .8s ease .1s}
+.chapter-index i{display:block;height:1px;width:0;background:var(--foreground);transition:width 1s cubic-bezier(.16,1,.3,1) .3s}
+.chapter-heading{font-size:clamp(44px,8vw,112px);margin:0;display:flex;flex-wrap:wrap;justify-content:center;column-gap:.22em;line-height:1}
+.chapter-heading>span{overflow:hidden;display:inline-block;padding-bottom:.1em}
+.chapter-heading>span>span{display:inline-block;transform:translateY(110%);transition:transform 1.1s cubic-bezier(.16,1,.3,1);transition-delay:inherit}
+.chapter-heading>span:last-child>span{font-style:italic}
+.chapter-cue{position:relative;width:88px;height:88px;display:grid;place-items:center;opacity:0;transform:scale(.7);transition:opacity .8s ease .5s,transform 1s cubic-bezier(.16,1,.3,1) .5s}
+.chapter-cue-ring{position:absolute;inset:0;width:100%;height:100%;stroke:var(--foreground)}
+.cue-track{stroke-width:.6;opacity:.25}
+.cue-draw{stroke-width:1;stroke-dasharray:277;stroke-dashoffset:277;transform:rotate(-90deg);transform-origin:center;transition:stroke-dashoffset 1.6s cubic-bezier(.16,1,.3,1) .6s}
+.cue-arc{stroke-width:1.4;transform-origin:50px 50px;animation:chapter-orbit-turn 7s linear infinite;animation-play-state:paused}
+.cue-arc-2{opacity:.5;animation-duration:11s;animation-direction:reverse}
+.chapter-cue .chapter-direction{width:30px;height:30px;stroke-width:1;transition:transform .45s cubic-bezier(.16,1,.3,1);animation:chapter-arrow-invite 3s ease-in-out infinite;animation-play-state:paused}
+.chapter-explore{font-size:10px;letter-spacing:.32em;text-transform:uppercase;opacity:0;transform:translateY(8px);transition:opacity .4s ease,transform .4s ease}
+.chapter-visible .chapter-index{opacity:1}.chapter-visible .chapter-index i{width:36px}
+.chapter-visible .chapter-heading>span>span{transform:none}
+.chapter-visible .chapter-cue{opacity:1;transform:none}
+.chapter-visible .cue-draw{stroke-dashoffset:0}
+.chapter-visible .cue-arc,.chapter-visible .chapter-cue .chapter-direction{animation-play-state:running}
+.chapter-link:hover .chapter-cue,.chapter-link:focus-visible .chapter-cue{transform:scale(1.12)}
+.chapter-link:hover .chapter-cue .chapter-direction{animation:none;transform:rotate(45deg)}
+.chapter-link:hover .chapter-explore,.chapter-link:focus-visible .chapter-explore{opacity:1;transform:none}
+.chapter-link:hover .chapter-index i{width:60px}
+@media(max-width:600px){.chapter-cue{width:66px;height:66px}.chapter-cue .chapter-direction{width:22px;height:22px}.chapter-centered{gap:16px}}
+@media(prefers-reduced-motion:reduce){.chapter-centered *{transition:none!important;animation:none!important}.chapter-index,.chapter-cue{opacity:1;transform:none}.chapter-index i{width:36px}.chapter-heading>span>span{transform:none}.cue-draw{stroke-dashoffset:0}}
