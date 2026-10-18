@@ -39,7 +39,7 @@ export function PhotographicChapters() {
     };
     const schedule = () => { if (!frame) frame = requestAnimationFrame(update); };
     const measure = () => {
-      bounds = panels.map(panel => ({ panel, start: panel.getBoundingClientRect().top + window.scrollY, distance: Math.max(1, panel.offsetHeight - window.innerHeight), previous: -1 }));
+      bounds = panels.map(panel => ({ panel, start: panel.getBoundingClientRect().top + window.scrollY - window.innerHeight, distance: Math.max(1, panel.offsetHeight + window.innerHeight), previous: -1 }));
       schedule();
     };
     const observer = new ResizeObserver(measure);
