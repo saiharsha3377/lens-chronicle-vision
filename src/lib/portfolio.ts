@@ -21,6 +21,7 @@ import ceremonyThree from "@/assets/web/fashion-ceremony-3.webp.asset.json";
 import ceremonyThreeThumb from "@/assets/thumbs/fashion-ceremony-3.webp.asset.json";
 import cityPortrait from "@/assets/reference/instagram-6.webp.asset.json";
 import garmentPortrait from "@/assets/reference/service-brand.webp.asset.json";
+import coralSari from "@/assets/reference/about-studio-asmi.webp.asset.json";
 
 export type WorkCategory = "Fashion" | "Editorial" | "Commercial";
 
