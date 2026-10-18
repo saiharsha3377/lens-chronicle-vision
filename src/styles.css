@@ -422,3 +422,39 @@ a{color:inherit;text-decoration:none}button{font:inherit}img{max-width:100%;disp
 .about-signature span{font-size:11px;letter-spacing:.5em;color:var(--muted-foreground)}
 .about-signature small{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted-foreground)}
 @media(max-width:900px){.about-signature{align-items:flex-start;text-align:left;justify-self:start}.about-philosophy{text-align:left}.about-philosophy p{margin-inline:0}}
+
+/* About - viewfinder hero motion */
+.viewfinder-motion{width:min(100%,360px);aspect-ratio:6/5;justify-self:center;color:var(--foreground)}
+.viewfinder-motion svg{width:100%;height:100%;overflow:visible}
+.viewfinder-motion path,.viewfinder-motion circle{stroke:currentColor;stroke-width:.8;fill:none}
+.viewfinder-motion text{fill:currentColor;stroke:none;font:400 9px var(--font-sans);letter-spacing:2px;opacity:.5}
+.vf-grid{opacity:.14}
+.vf-brackets{animation:vf-hunt 7s ease-in-out infinite;animation-play-state:paused;transform-origin:180px 150px}
+.vf-focus{opacity:.7;animation:vf-pulse 3.4s ease-in-out infinite;animation-play-state:paused;transform-origin:180px 150px}
+.vf-focus-inner{animation-delay:1.7s}
+.vf-cross{opacity:.45}
+.vf-meter{opacity:.5}
+.vf-needle{fill:currentColor;animation:vf-meter 7s ease-in-out infinite;animation-play-state:paused}
+.viewfinder-visible .vf-brackets,.viewfinder-visible .vf-focus,.viewfinder-visible .vf-needle{animation-play-state:running}
+@keyframes vf-hunt{0%,100%{transform:scale(1.06);opacity:.55}35%,65%{transform:scale(1);opacity:1}}
+@keyframes vf-pulse{0%,100%{transform:scale(.85);opacity:.35}50%{transform:scale(1);opacity:.8}}
+@keyframes vf-meter{0%,100%{transform:translateX(0)}50%{transform:translateX(240px)}}
+
+/* About - new editorial sections */
+.about-hero{display:grid;grid-template-columns:1.2fr 1fr;gap:80px;align-items:center;padding-block:90px 70px;min-height:70svh}
+.about-hero h1{font-size:96px}
+.about-hero-role{color:var(--muted-foreground);font-size:12px;text-transform:uppercase;letter-spacing:3px;margin-top:26px}
+.about-disciplines{padding-block:80px;border-top:1px solid var(--border)}
+.about-disciplines h2{font-size:64px;margin-bottom:50px}
+.about-disciplines h2 span{display:block}
+.about-disciplines ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:0 60px}
+.about-disciplines li{display:flex;align-items:baseline;gap:22px;padding-block:22px;border-top:1px solid var(--border);font:italic 28px/1.3 var(--font-display);color:var(--primary)}
+.about-disciplines li span{font:400 10px var(--font-sans);color:var(--muted-foreground);letter-spacing:2px}
+.about-philosophy{text-align:center;padding-block:110px}
+.about-philosophy h2{font-size:76px}
+.about-philosophy h2 span{display:block}
+.about-philosophy p:not(.kicker){color:var(--muted-foreground);margin-top:26px;font-size:15px}
+@media(max-width:1100px){.about-hero h1{font-size:76px}.about-disciplines h2{font-size:52px}.about-philosophy h2{font-size:60px}}
+@media(max-width:900px){.about-hero{grid-template-columns:1fr;gap:40px;min-height:0;padding-block:70px 50px}.about-hero h1{font-size:64px}.viewfinder-motion{justify-self:start;width:min(100%,300px)}.about-disciplines ul{grid-template-columns:1fr}.about-disciplines h2{font-size:44px}.about-philosophy h2{font-size:48px}.about-philosophy{padding-block:80px}}
+@media(max-width:600px){.about-hero h1{font-size:52px}.about-disciplines li{font-size:24px}.about-philosophy h2{font-size:40px}}
+@media(prefers-reduced-motion:reduce){.vf-brackets,.vf-focus,.vf-needle{animation:none}.about-disciplines li{transition-delay:0ms}}
