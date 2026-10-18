@@ -1,7 +1,7 @@
 # Roadmap
 
-- [ ] Remove blank founder-photo framing and verify the real portrait appears
-- [ ] Move the animated invitation to Home and Services only and remove the footer pitch
+- [x] Remove blank founder-photo framing and verify the real portrait appears
+- [x] Move the animated invitation to Home and Services only and remove the footer pitch
 
 - [x] Rebuild About philosophy as a focus-pull statement and the closing as a "Have a project in mind?" invitation without brand lettering
 - [x] Move the project invitation out of the shared footer into About only, and verify links, reduced motion and desktop/mobile spacing
