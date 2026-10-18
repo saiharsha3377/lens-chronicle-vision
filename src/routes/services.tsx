@@ -3,6 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site-layout";
 import { ServiceCollection } from "@/components/editorial-sections";
 import { ApertureMotion } from "@/components/aperture-motion";
+import { ProjectInvitation } from "@/components/project-invitation";
 
 export const Route = createFileRoute("/services")({
   head: () => ({ meta: [
@@ -17,5 +18,5 @@ export const Route = createFileRoute("/services")({
 });
 
 function ServicesPage() {
- return <SiteLayout><main className="inner-page services-edition"><section className="services-intro editorial-container"><div data-motion="rise"><p className="kicker">Services / Lens Chronicle</p><h1>Photography,<br/><em>with intention.</em></h1><p>From the first idea to the final image. Fashion, editorial and commercial commissions, shaped around your story.</p></div><ApertureMotion/></section><section className="editorial-container services-page" aria-label="Photography commissions"><ServiceCollection/></section></main></SiteLayout>;
+ return <SiteLayout><main className="inner-page services-edition"><section className="services-intro editorial-container"><div data-motion="rise"><p className="kicker">Services / Lens Chronicle</p><h1>Photography,<br/><em>with intention.</em></h1><p>From the first idea to the final image. Fashion, editorial and commercial commissions, shaped around your story.</p></div><ApertureMotion/></section><section className="editorial-container services-page" aria-label="Photography commissions"><ServiceCollection/></section><ProjectInvitation /></main></SiteLayout>;
 }
