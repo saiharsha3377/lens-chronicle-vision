@@ -527,3 +527,29 @@ a{color:inherit;text-decoration:none}button{font:inherit}img{max-width:100%;disp
 @media(max-width:900px){.about-hero:has(.founder-name){grid-template-columns:1fr}.about-hero h1.founder-name{font-size:clamp(30px,9vw,64px)}.journey-cards{grid-template-columns:1fr}.about-disciplines h2.single-line-title{font-size:clamp(24px,7vw,44px)}.philosophy-statement h2.philosophy-line{font-size:clamp(26px,8.4vw,60px)}}
 @media(max-width:600px){.discipline-tags li{font-size:19px;padding:12px 20px}.about-hero h1.founder-name{font-size:clamp(24px,8.6vw,52px)}}
 @media(prefers-reduced-motion:reduce){.philosophy-line span{background-position:0 0;transition:none}.journey-card>i{transform:none}}
+
+/* About v3 - section-wise, no empty space */
+.about-disciplines,.about-principles,.about-philosophy{padding-block:clamp(56px,7vw,96px)}
+.about-disciplines h2.single-line-title{margin-bottom:clamp(28px,4vw,48px)}
+.about-disciplines ul.discipline-tags{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1px solid var(--border);border-left:1px solid var(--border)}
+.discipline-tags li{border-radius:0;border:0;border-right:1px solid var(--border);border-bottom:1px solid var(--border);padding:clamp(24px,3vw,40px) clamp(18px,2.4vw,32px);font-size:clamp(20px,2.2vw,30px);isolation:isolate}
+.discipline-tags li::before{content:"";position:absolute;inset:0;background:var(--primary);transform:scaleY(0);transform-origin:bottom;transition:transform .6s cubic-bezier(.16,1,.3,1);z-index:-1}
+.discipline-tags li:hover::before{transform:scaleY(1)}
+.discipline-tags li:hover{color:var(--primary-foreground)}.discipline-tags li:hover i{border-color:var(--primary-foreground);background:var(--primary-foreground)}
+.journey-cards{margin-top:clamp(24px,3vw,36px)}
+.journey-card{padding:28px 28px 32px;border:1px solid var(--border);transition:border-color .5s}
+.journey-card:hover{border-color:var(--primary)}
+.about-philosophy{display:block;text-align:center}
+.philosophy-statement{position:relative;padding:clamp(36px,5vw,64px) clamp(20px,4vw,60px);max-width:1100px;margin:0 auto}
+.philosophy-statement .kicker{margin:0 0 22px}
+.about-philosophy .philosophy-statement>p:not(.kicker){margin:24px auto 0}
+.philosophy-scale{justify-content:center;margin-top:30px}
+.philosophy-frame i{position:absolute;width:42px;height:42px;border:1px solid var(--primary);opacity:0;transition:opacity .8s,transform 1.3s cubic-bezier(.16,1,.3,1)}
+.philosophy-frame i:nth-child(1){top:0;left:0;border-right:0;border-bottom:0;transform:translate(-40px,-40px)}
+.philosophy-frame i:nth-child(2){top:0;right:0;border-left:0;border-bottom:0;transform:translate(40px,-40px)}
+.philosophy-frame i:nth-child(3){bottom:0;left:0;border-right:0;border-top:0;transform:translate(-40px,40px)}
+.philosophy-frame i:nth-child(4){bottom:0;right:0;border-left:0;border-top:0;transform:translate(40px,40px)}
+.reveal-visible .philosophy-frame i{opacity:1;transform:none}
+@media(max-width:900px){.about-philosophy{text-align:center}.about-disciplines ul.discipline-tags{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.discipline-tags li{font-size:18px;padding:20px 14px;gap:10px}.philosophy-frame i{width:24px;height:24px}.journey-card{padding:22px 20px 26px}}
+@media(prefers-reduced-motion:reduce){.philosophy-frame i{opacity:1;transform:none}}
