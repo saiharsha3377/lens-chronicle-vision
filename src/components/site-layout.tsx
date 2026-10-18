@@ -28,7 +28,11 @@ export function WhatsAppIcon({ className = "" }: { className?: string }) {
 }
 
 export function Monogram({ className = "" }: { className?: string }) {
-  return <img className={`monogram ${className}`} src={monogram.url} alt="Lens Chronicle Photography" />;
+  return (
+    <span className={`monogram monogram-mask ${className}`} style={{ ["--logo" as string]: `url("${monogram.url}")` }}>
+      <img src={monogram.url} alt="Lens Chronicle Photography" decoding="async" />
+    </span>
+  );
 }
 
 export function SiteLayout({ children }: { children: ReactNode }) {
