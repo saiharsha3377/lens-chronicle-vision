@@ -4,12 +4,12 @@ import { SiteLayout } from "@/components/site-layout";
 import { WorkGallery } from "@/components/work-gallery";
 
 export const Route = createFileRoute("/work")({
-  head: () => ({ meta: [
+  head: () => ({ links: [{ rel: "canonical", href: "https://ivory-lens-chronicle.lovable.app/work" }], meta: [
     { title: "Selected Work | Lens Chronicle Photography" },
     { name: "description", content: "Explore Lens Chronicle fashion, editorial and commercial photography by category." },
     { property: "og:title", content: "Selected Work | Lens Chronicle Photography" },
     { property: "og:description", content: "A filterable portfolio of fashion, editorial and commercial photography." },
-    { property: "og:type", content: "website" },
+    { property: "og:type", content: "website" }, { property: "og:url", content: "https://ivory-lens-chronicle.lovable.app/work" }, { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:card", content: "summary_large_image" },
   ]}),
   component: WorkPage,

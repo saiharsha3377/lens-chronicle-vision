@@ -12,3 +12,5 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://ivory-lens-chronicle.lovable.app/sitemap.xml

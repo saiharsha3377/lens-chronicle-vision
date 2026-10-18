@@ -5,12 +5,12 @@ import { PHONE_DISPLAY, PHONE_TEL, SiteLayout, WHATSAPP_URL, WhatsAppIcon } from
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/contact")({
-  head: () => ({ meta: [
+  head: () => ({ links: [{ rel: "canonical", href: "https://ivory-lens-chronicle.lovable.app/contact" }], meta: [
     { title: "Contact Malluvalasa Narasimha | Lens Chronicle Photography" },
     { name: "description", content: "Contact Malluvalasa Narasimha at Lens Chronicle Photography by phone, WhatsApp or email." },
     { property: "og:title", content: "Contact Malluvalasa Narasimha | Lens Chronicle Photography" },
     { property: "og:description", content: "Reach the Hyderabad studio directly by call, WhatsApp or email." },
-    { property: "og:type", content: "website" },
+    { property: "og:type", content: "website" }, { property: "og:url", content: "https://ivory-lens-chronicle.lovable.app/contact" }, { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:card", content: "summary_large_image" },
   ]}),
   component: ContactPage,
