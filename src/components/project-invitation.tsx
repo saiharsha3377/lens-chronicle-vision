@@ -5,7 +5,7 @@ export function ProjectInvitation() {
     <section className="about-closing editorial-container">
       <div className="closing-copy" data-motion="mask">
         <p className="kicker">Let&rsquo;s create something meaningful</p>
-        <h2><span><i>Have a project</i></span><span><i><em>in mind?</em></i></span></h2>
+        <h2 className="closing-line"><span><i>Have a project <em>in mind?</em></i></span></h2>
         <p>A creative concept, a portfolio to build, or a brand story to tell - let&rsquo;s collaborate and bring your vision to life.</p>
         <Link className="text-link" to="/contact">See contact details <span aria-hidden="true">↗</span></Link>
       </div>

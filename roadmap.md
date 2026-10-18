@@ -78,3 +78,4 @@
 - [x] Increase monogram size and improve scroll/loading performance
 - [x] Verify routes, filters, form states, mobile/desktop layouts, and diagnostics
 - Add real business details (WhatsApp, Instagram, phone, Hyderabad) to footer and contact page — done 2026-09-26
+- [x] Improve Services: remove eyebrow, single-line full-viewport hero without fullstop, animated commission rows with index marks and staggered copy, single-line invitation; footer unchanged

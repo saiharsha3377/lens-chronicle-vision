@@ -18,5 +18,21 @@ export const Route = createFileRoute("/services")({
 });
 
 function ServicesPage() {
- return <SiteLayout><main className="inner-page services-edition"><section className="services-intro editorial-container"><div data-motion="rise"><p className="kicker">Services / Lens Chronicle</p><h1>Photography,<br/><em>with intention.</em></h1><p>From the first idea to the final image. Fashion, editorial and commercial commissions, shaped around your story.</p></div><ApertureMotion/></section><section className="editorial-container services-page" aria-label="Photography commissions"><ServiceCollection/></section><ProjectInvitation /></main></SiteLayout>;
+  return (
+    <SiteLayout>
+      <main className="inner-page services-edition">
+        <section className="services-intro editorial-container">
+          <div data-motion="rise">
+            <h1>Photography, <em>with intention</em></h1>
+            <p>From the first idea to the final image. Fashion, editorial and commercial commissions, shaped around your story.</p>
+          </div>
+          <ApertureMotion />
+        </section>
+        <section className="editorial-container services-page" aria-label="Photography commissions">
+          <ServiceCollection />
+        </section>
+        <ProjectInvitation />
+      </main>
+    </SiteLayout>
+  );
 }
