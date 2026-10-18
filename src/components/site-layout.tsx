@@ -39,7 +39,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const element = shell.current;
     if (!element) return;
-    const selector = ".studio-note > *, .section-heading, .about-text > *, .page-intro > *, .footer-contact, [data-motion]";
+    const selector = ".studio-note > *, .section-heading, .about-text > *, .page-intro > *, [data-motion]";
     const registered = new WeakSet<Element>();
     const observer = new IntersectionObserver(entries => {
       for (const entry of entries) if (entry.isIntersecting) {
@@ -88,7 +88,6 @@ export function SiteLayout({ children }: { children: ReactNode }) {
       {children}
 
       <footer className="site-footer premium-footer">
-        <div className="editorial-container footer-contact"><div><p className="kicker">Contact / Commissions</p><h2>Have a project<br/><em>in mind?</em></h2></div><Button asChild className="footer-inquiry"><Link to="/book" aria-label="Discuss a project"><span aria-hidden="true">↗</span></Link></Button></div>
         <div className="footer-columns editorial-container">
           <div className="footer-brand"><Monogram /><p>Luxury Fashion &amp;<br/>Editorial Photography</p></div>
           <div><p className="kicker">Explore</p><nav aria-label="Footer navigation">{navItems.map(item=><Link key={item.to} to={item.to}>{item.label}</Link>)}</nav></div>

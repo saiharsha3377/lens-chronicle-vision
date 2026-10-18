@@ -68,26 +68,33 @@ function AboutPage() {
     </section>
 
     <section className="about-philosophy editorial-container">
-      <div data-motion="lines">
-        <p className="kicker">04 / My philosophy</p>
+      <div className="philosophy-rail" data-motion="rise">
+        <span>04</span>
+        <p>My philosophy</p>
+        <i aria-hidden="true"/>
+      </div>
+      <div className="philosophy-statement" data-motion="focus-pull">
         <h2><span>Every frame</span><span><em>has a story.</em></span></h2>
         <p>My goal is to bring that story to life through photography.</p>
+        <div className="philosophy-scale" aria-hidden="true"><i/><i/><i/><i/><i/><i/><i/></div>
       </div>
     </section>
 
     <section className="about-closing editorial-container">
-      <div data-motion="lines">
+      <div className="closing-copy" data-motion="mask">
         <p className="kicker">05 / Let&rsquo;s create something meaningful</p>
-        <h2><span>Have a concept,</span><span><em>a story to tell?</em></span></h2>
+        <h2><span><i>Have a project</i></span><span><i><em>in mind?</em></i></span></h2>
         <p>A creative concept, a portfolio to build, or a brand story to tell - let&rsquo;s collaborate and bring your vision to life.</p>
-        <Button asChild variant="ghost" className="editorial-button"><Link to="/book">Book a shoot <span aria-hidden="true">↗</span></Link></Button>
+        <Link className="text-link" to="/contact">See contact details <span aria-hidden="true">↗</span></Link>
       </div>
-      <div className="about-signature" data-motion="from-right">
-        <p>Lens <em>Chronicle</em></p>
-        <span>PHOTOGRAPHY</span>
-        <small>Fashion · Editorial · Commercial</small>
-        <small>Hyderabad, India</small>
-      </div>
+      <Link to="/book" className="closing-dial" data-motion="settle" aria-label="Book a shoot">
+        <svg viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+          <circle className="dial-track" cx="60" cy="60" r="54"/>
+          <circle className="dial-draw" cx="60" cy="60" r="54"/>
+          <circle className="dial-ticks" cx="60" cy="60" r="45"/>
+        </svg>
+        <span aria-hidden="true">↗</span>
+      </Link>
     </section>
   </main></SiteLayout>;
 }
